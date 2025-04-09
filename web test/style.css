@@ -1,0 +1,591 @@
+/* --- Base Styles & Variables --- */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --light-bg: #ffffff;
+    --light-text: #212529;
+    --dark-bg: #1a1a1a; /* Darker gray */
+    --dark-text: #f8f9fa;
+    --header-bg-light: #f8f9fa;
+    --header-bg-dark: #282828; /* Slightly lighter dark */
+    --footer-bg-light: #e9ecef;
+    --footer-bg-dark: #212121;
+    --card-bg-light: #ffffff;
+    --card-bg-dark: #2f2f2f;
+    --border-color-light: #dee2e6;
+    --border-color-dark: #444;
+    --link-color-light: var(--primary-color);
+    --link-color-dark: #58a6ff; /* Lighter blue for dark mode */
+    --button-text-light: #ffffff;
+    --button-text-dark: #ffffff;
+
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+body.dark-mode {
+    --primary-color: #58a6ff;
+    --secondary-color: #8b949e;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+    --header-bg-light: var(--header-bg-dark);
+    --footer-bg-light: var(--footer-bg-dark);
+    --card-bg-light: var(--card-bg-dark);
+    --border-color-light: var(--border-color-dark);
+    --link-color-light: var(--link-color-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--link-color-light);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color); /* Adjust hover color if needed */
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.4rem; }
+p { margin-bottom: 1rem; }
+
+img { max-width: 100%; height: auto; }
+
+/* --- Header --- */
+.site-header {
+    background-color: var(--header-bg-light);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.logo-placeholder {
+    height: 40px; /* Adjust size */
+    width: 40px;  /* Adjust size */
+    background-color: var(--secondary-color);
+    color: var(--light-bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+body.dark-mode .logo-placeholder {
+    background-color: var(--secondary-color);
+    color: var(--dark-bg);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 1.5rem;
+}
+
+.main-nav a {
+    font-weight: 500;
+}
+
+#mode-toggle {
+    background: none;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+#mode-toggle:hover {
+     background-color: var(--secondary-color);
+     color: var(--light-bg); /* Text color on hover */
+}
+body.dark-mode #mode-toggle {
+     border-color: var(--secondary-color);
+     color: var(--secondary-color);
+}
+body.dark-mode #mode-toggle:hover {
+     background-color: var(--secondary-color);
+     color: var(--dark-bg); /* Text color on hover */
+}
+
+
+/* --- Sections --- */
+section {
+    padding: 4rem 0;
+}
+
+/* For testing */
+/* section:nth-child(even) {
+    /* Optional alternating background */
+    /* background-color: var(--footer-bg-light); */
+    /* transition: background-color var(--transition-speed) ease; */
+/* } */
+
+/* --- Hero Section --- */
+.hero {
+    background-color: var(--card-bg-light); /* Slightly different bg */
+    padding: 5rem 0;
+    text-align: left;
+    transition: background-color var(--transition-speed) ease;
+}
+body.dark-mode .hero {
+    background-color: var(--card-bg-dark);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-animation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--button-text-light);
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed) ease, transform 0.2s ease;
+    margin-top: 1rem;
+}
+body.dark-mode .cta-button {
+     color: var(--button-text-dark);
+}
+
+.cta-button:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 85%, black); /* Darken button on hover */
+    transform: translateY(-2px);
+    color: var(--button-text-light); /* Ensure text remains readable */
+}
+body.dark-mode .cta-button:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 85%, white); /* Lighten button on hover */
+    color: var(--button-text-dark);
+}
+
+
+/* --- Problem Statement --- */
+.problem-statement {
+     background-color: var(--footer-bg-light); /* Subtle background */
+     transition: background-color var(--transition-speed) ease;
+     text-align: center;
+}
+.problem-statement p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Solution / Features --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background-color: var(--card-bg-light);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, transform 0.2s ease;
+}
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+body.dark-mode .feature-item {
+    background-color: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+}
+body.dark-mode .feature-item:hover {
+     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.icon-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--button-text-light);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+body.dark-mode .icon-placeholder {
+     color: var(--button-text-dark);
+}
+
+
+/* --- How It Works --- */
+.how-it-works {
+    background-color: var(--footer-bg-light);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+    text-align: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.step-item {
+    flex: 1;
+    min-width: 200px; /* Ensure minimum width */
+}
+.step-item .icon-placeholder {
+    background-color: var(--secondary-color); /* Different color for steps */
+}
+
+/* --- Partners & Clients --- */
+.logo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    filter: grayscale(1); /* Make logos grayscale initially */
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.logo-gallery:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.logo-item-placeholder {
+    height: 50px; /* Adjust height */
+    padding: 0 1rem;
+    background-color: var(--secondary-color);
+    color: var(--light-bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    min-width: 120px; /* Ensure some width */
+}
+body.dark-mode .logo-item-placeholder {
+     background-color: var(--secondary-color);
+     color: var(--dark-bg);
+}
+/* For testing */
+/* .logo-item-placeholder.tool-logo {
+    /* Optional: different style for tool logos */
+    /* border: 1px dashed var(--primary-color); */
+/* }  */
+
+
+/* --- Final CTA --- */
+.final-cta {
+    background-color: var(--primary-color);
+    color: var(--button-text-light);
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+body.dark-mode .final-cta {
+     color: var(--button-text-dark);
+}
+.final-cta h2 {
+    color: inherit; /* Inherit from parent section */
+}
+.final-cta p {
+     color: inherit;
+}
+.final-cta .cta-button {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+.final-cta .cta-button:hover {
+     background-color: var(--footer-bg-light);
+     color: var(--primary-color);
+}
+body.dark-mode .final-cta .cta-button {
+    background-color: var(--dark-text);
+    color: var(--primary-color);
+}
+body.dark-mode .final-cta .cta-button:hover {
+    background-color: var(--secondary-color);
+     color: var(--dark-text);
+}
+
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--footer-bg-light);
+    color: var(--secondary-color);
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color-light);
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+body.dark-mode .site-footer {
+    color: var(--secondary-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 1rem;
+}
+
+.footer-links a, .social-media a {
+    color: var(--secondary-color);
+    margin-right: 1rem;
+}
+.footer-links a:hover, .social-media a:hover {
+    color: var(--link-color-light);
+}
+
+.social-media span {
+    margin-right: 0.5rem;
+}
+.social-media a {
+    font-weight: bold; /* Make placeholder links visible */
+}
+
+.copyright {
+    text-align: center;
+    flex-basis: 100%; /* Take full width if wrapped */
+    margin-top: 1rem;
+}
+
+/* --- Placeholder Styles --- */
+.animation-placeholder, .logo-placeholder, .icon-placeholder, .logo-item-placeholder {
+    border: 1px dashed var(--secondary-color);
+    text-align: center;
+    display: flex; /* Use flex for alignment if needed */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem; /* Add padding */
+    min-height: 50px; /* Ensure minimum height */
+}
+.animation-placeholder {
+    height: 250px; /* Example height */
+    width: 100%;
+    position: relative; /* For positioning animated elements */
+    overflow: hidden; /* Hide overflow */
+}
+
+
+/* --- Animations --- */
+
+/* Basic Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Fade In Up */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade In Down */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Zoom In */
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+/* Construction/Scheduling Animation Example */
+.construction-schedule-anim .bar {
+    position: absolute;
+    bottom: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    opacity: 0;
+}
+.construction-schedule-anim .bar1 {
+    left: 10%;
+    width: 0;
+    animation: growBar 1.5s ease-out 0.5s forwards;
+}
+.construction-schedule-anim .bar2 {
+    left: 30%;
+    width: 0;
+    background-color: var(--secondary-color);
+    animation: growBar 1.8s ease-out 1s forwards;
+}
+@keyframes growBar {
+    from { width: 0; opacity: 1; }
+    to { width: 40%; opacity: 1; } /* Example width */
+}
+
+.construction-schedule-anim .node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--light-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+}
+body.dark-mode .construction-schedule-anim .node {
+    background-color: var(--dark-bg);
+}
+.construction-schedule-anim .node1 { top: 30%; left: 20%; animation: fadeIn 1s ease 1.5s forwards; }
+.construction-schedule-anim .node2 { top: 50%; left: 45%; animation: fadeIn 1s ease 1.8s forwards; }
+.construction-schedule-anim .node3 { top: 25%; left: 70%; animation: fadeIn 1s ease 2.1s forwards; }
+/* Add lines connecting nodes if desired using pseudo-elements or SVG */
+
+
+/* Animation Triggering */
+.animated {
+    opacity: 0; /* Start hidden */
+    /* Define which animation to run */
+}
+
+.animated.fadeIn { animation: fadeIn 1s ease forwards; }
+.animated.fadeInUp { animation: fadeInUp 1s ease forwards; }
+.animated.fadeInDown { animation: fadeInDown 1s ease forwards; }
+.animated.fadeInRight { animation: fadeInRight 1s ease forwards; }
+.animated.zoomIn { animation: zoomIn 0.8s ease forwards; }
+
+/* Animation Delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
+.delay-5 { animation-delay: 1.0s; }
+.delay-6 { animation-delay: 1.2s; }
+
+
+/* --- Responsive (Basic Example) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+
+    .header-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .main-nav ul {
+        margin-top: 0.5rem;
+        padding: 0; /* Reset padding if needed */
+    }
+     .main-nav li {
+        margin-left: 1rem; /* Adjust spacing */
+    }
+
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        order: 2; /* Text below animation */
+    }
+     .hero-animation {
+        order: 1; /* Animation above text */
+        margin-bottom: 2rem;
+        width: 80%; /* Reduce animation width */
+    }
+    .animation-placeholder {
+        height: 200px; /* Adjust height */
+    }
+
+
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .step-item {
+        max-width: 350px; /* Limit width */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links, .social-media {
+        margin-bottom: 0.5rem;
+    }
+    .footer-links a { margin: 0 0.5rem; }
+    .social-media a { margin: 0 0.5rem; }
+    .copyright { margin-top: 1rem; }
+}
