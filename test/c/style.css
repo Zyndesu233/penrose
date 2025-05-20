@@ -288,13 +288,13 @@ ul {
     gap: 2rem;
 }
 .hero-section h1, .hero-section h2, .hero-section h3 {
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 .hero-section .subtext {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     max-width: 600px;
-    color: rgba(248, 249, 250, 0.85); /* Lighter text on dark bg */
+    color: rgb(#2F2F2F); /* Lighter text on dark bg */
 }
 .hero-content {
     flex: 1;
