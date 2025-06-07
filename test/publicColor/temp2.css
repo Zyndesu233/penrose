@@ -1,0 +1,5 @@
+@import url(./color.css);
+
+.container2 {
+    background-color: var(--white1);
+}

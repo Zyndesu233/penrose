@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penrose Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../src/dashboard.css">
+    <link rel="stylesheet" href="../src/index.css">
+</head>
+<body>
+
+    <!-- <header class="navbar">
+        <div class="navbar-left">
+            <div class="logo">Penrose</div>
+        </div>
+        <nav class="navbar-right">
+            <a href="#" class="nav-link active">Dashboard</a>
+            <a href="#" class="nav-link">Projects</a>
+            <a href="#" class="nav-link">Program</a>
+            <a href="#" class="nav-link">Schedule</a>
+            <a href="#" class="nav-link">Meeting</a>
+        </nav>
+    </header> -->
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="#hero" class="logo-link">
+                    <img src="../img/Logo BW.png" alt="Penrose Logo" class="logo-image">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#product-intro">Product</a></li>
+                    <li><a href="#company-intro">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#">Workspace</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-secondary btn-small">Sign In</a>
+                </div>
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <section class="welcome-section">
+            <div class="welcome-message">
+                <h1>Welcome back, [User name]!</h1>
+            </div>
+            <div class="user-info">
+                <i class="fas fa-user-circle user-icon"></i>
+                <div class="user-details">
+                    <span class="user-name">[User Name]</span>
+                    <span class="user-role">Project Manager</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="overview-section">
+            <div class="controls-header">
+                <div class="view-toggle">
+                    <button id="projects-btn" class="toggle-btn">Projects</button>
+                    <button id="program-btn" class="toggle-btn">Program</button>
+                </div>
+                <div class="controls-bar">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search Projects..." class="search-box">
+                        <button class="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="btn btn-primary">Add Project</button>
+                </div>
+            </div>
+
+            <div class="content-grid" id="content-grid">
+                <div class="card skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+                <div class="card skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+                <div class="card skeleton">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-text"></div>
+                    <div class="skeleton-text short"></div>
+                </div>
+                
+                <div class="card" style="display: none;">
+                    <img src="https://via.placeholder.com/300x200.png?text=Project+Alpha" alt="Project Image">
+                    <h3>Project Alpha</h3>
+                    <p>A short description of Project Alpha and its current status.</p>
+                </div>
+                 <div class="card" style="display: none;">
+                    <img src="https://via.placeholder.com/300x200.png?text=Project+Beta" alt="Project Image">
+                    <h3>Project Beta</h3>
+                    <p>A short description of Project Beta and its current status.</p>
+                </div>
+                 <div class="card" style="display: none;">
+                    <img src="https://via.placeholder.com/300x200.png?text=Project+Gamma" alt="Project Image">
+                    <h3>Project Gamma</h3>
+                    <p>A short description of Project Gamma and its current status.</p>
+                </div>
+            </div>
+            <div class="show-all-container">
+                <button class="btn">Show All</button>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h2>Pending Review</h2>
+            <div class="review-controls">
+                <div class="filter-buttons">
+                    <button class="btn filter-btn">Approved</button>
+                    <button class="btn filter-btn active">Pending Approval</button>
+                    <button class="btn filter-btn">Rejected</button>
+                </div>
+                <div class="review-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search..." class="search-box">
+                    </div>
+                    <div class="sort-container">
+                        <select class="sort-dropdown">
+                            <option>Sort by</option>
+                            <option>Date</option>
+                            <option>Name</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary">Schedule Upload</button>
+                </div>
+            </div>
+
+            <div class="review-table-container">
+                <table class="review-table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Review Request</th>
+                            <th>Contractor Submission Date</th>
+                            <th>Owner</th>
+                            <th>Review Completion Date</th>
+                            <th>Status</th>
+                            <th>Verification</th>
+                            <th>Review Report</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project Sky-High</td>
+                            <td>Structural Integrity Analysis</td>
+                            <td>2025-05-20</td>
+                            <td>John Doe</td>
+                            <td>2025-06-10</td>
+                            <td><span class="status-tag status-pending">Pending</span></td>
+                            <td><i class="fas fa-check-circle ai-highlight" title="AI Verified"></i></td>
+                            <td><a href="#" class="btn-link">View Report</a></td>
+                        </tr>
+                        <tr>
+                            <td>Oceanfront Residences</td>
+                            <td>MEP Drawings</td>
+                            <td>2025-05-18</td>
+                            <td>Jane Smith</td>
+                            <td>2025-06-05</td>
+                            <td><span class="status-tag status-approved">Approved</span></td>
+                            <td><i class="fas fa-check-circle" title="Manually Verified"></i></td>
+                            <td><a href="#" class="btn-link">View Report</a></td>
+                        </tr>
+                        <tr>
+                            <td>Downtown Metro Line</td>
+                            <td>Geotechnical Survey</td>
+                            <td>2025-05-15</td>
+                            <td>Robert Brown</td>
+                            <td>-</td>
+                            <td><span class="status-tag status-rejected">Rejected</span></td>
+                            <td><i class="fas fa-times-circle" title="Verification Failed"></i></td>
+                            <td><a href="#" class="btn-link">View Report</a></td>
+                        </tr>
+                        <tr>
+                            <td>Greenfield Data Center</td>
+                            <td>Environmental Impact Report</td>
+                            <td>2025-05-22</td>
+                            <td>Emily White</td>
+                            <td>-</td>
+                            <td><span class="status-tag status-pending">Pending</span></td>
+                            <td><i class="fas fa-check-circle ai-highlight" title="AI Verified"></i></td>
+                            <td><a href="#" class="btn-link">View Report</a></td>
+                        </tr>
+                        <tr>
+                            <td>City General Hospital Wing</td>
+                            <td>Architectural Blueprints</td>
+                            <td>2025-05-19</td>
+                            <td>Michael Green</td>
+                            <td>2025-06-08</td>
+                            <td><span class="status-tag status-approved">Approved</span></td>
+                            <td><i class="fas fa-check-circle" title="Manually Verified"></i></td>
+                            <td><a href="#" class="btn-link">View Report</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button class="pagination-btn" title="Previous Page"><i class="fas fa-arrow-left"></i></button>
+                <button class="pagination-btn" title="Next Page"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../src/dashboard.js"></script>
+    <script src="../src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+:root {
+  --primary-color: #0A2463; /* Deep Blue */
+  --secondary-color: #2F2F2F; /* Industrial Gray */
+  --accent-color: #FF7F11; /* Safety Orange */
+  --accent-color-alt: #00C4CC; /* AI Teal for specific highlights if needed */
+  --background-light: #F8F9FA; /* Off-White */
+  --background-dark: #3E6680; /* Steel Gray - can be used for darker sections */
+  --text-light: #FFFFFF;
+  --text-dark: #333333;
+  --text-muted: #6c757d;
+  --font-family: 'Montserrat', sans-serif;
+  --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --border-radius: 6px;
+}
