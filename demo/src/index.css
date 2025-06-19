@@ -206,7 +206,7 @@ ul {
 
 /* --- Row 1: Hero Section --- */
 .hero-section {
-  background-color: var(--primary-color); /* Deep Blue background */
+  background-color: var(--background-light); /* Light background */
   /* Subtle blueprint texture */
   background-image: 
       linear-gradient(rgba(10, 36, 99, 0.95), rgba(10, 36, 99, 0.95)),
