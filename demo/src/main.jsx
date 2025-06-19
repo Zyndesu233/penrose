@@ -4,19 +4,19 @@ import HeaderApp from "./headerApp";
 
 const frontPageNavList = [{
   name: "Home",
-  link: "#hero"
+  link: "#hero-adjusted"
 },
 {
   name: "Product",
-  link: "#prodecut-intro"
+  link: "#prodecut-intro-adjusted"
 },
 {
   name: "About Us",
-  link: "#company-intro"
+  link: "#company-intro-adjusted"
 },
 {
   name: "Testimonials",
-  link: "#testimonials"
+  link: "#testimonials-adjusted"
 },
 {
   name: "Workspace",

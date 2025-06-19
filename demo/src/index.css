@@ -197,6 +197,12 @@ ul {
   transform: translateY(0);
 }
 
+#hero-adjusted, #product-intro-adjusted, #company-intro-adjusted, #testimonial-adjusted {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+}
 
 /* --- Row 1: Hero Section --- */
 .hero-section {
