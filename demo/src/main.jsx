@@ -8,7 +8,7 @@ const frontPageNavList = [{
 },
 {
   name: "Product",
-  link: "#prodecut-intro-adjusted"
+  link: "#product-intro-adjusted"
 },
 {
   name: "About Us",
