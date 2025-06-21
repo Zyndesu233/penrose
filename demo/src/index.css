@@ -185,9 +185,7 @@ ul {
   opacity: 1;
   transform: translateY(0);
 }
-.content-row:nth-child(odd) {
-  /* background-color: var(--background-light); */ /* Default */
-}
+
 .content-row:nth-child(even) {
    background-color: #FFFFFF; /* Slightly different for visual separation */
 }
@@ -262,20 +260,15 @@ ul {
 
 
 /* --- Row 2: Product Intro --- */
-#product-intro {
-  /* background-color: var(--background-light); */ /* default */
-}
 .workflow-diagram {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 3rem;
 }
 .workflow-step {
-  flex-basis: calc(20% - 2rem); /* 5 items, accounting for gap */
-  min-width: 150px; /* Minimum width for smaller screens before wrapping */
   text-align: center;
   padding: 1.5rem;
   background-color: #FFFFFF;
@@ -613,7 +606,8 @@ ul {
      /* This might need fine-tuning depending on exact arrow styling */
   }
    .workflow-step {
-      flex-basis: calc(100% / 5 - 3rem); /* Adjust if arrows are part of flex items */
+      flex-basis: calc(100% / 5 - 2.5rem);
+      height: 35vh;
   }
 }
 
