@@ -88,7 +88,7 @@ body {
 .btn-primary:hover { background-color: #e66a00; }
 .btn-secondary { background-color: var(--secondary-color); color: var(--text-light); }
 .btn-secondary:hover { background-color: #1a1a1a; }
-.search-container { display: flex; align-items: center; }
+.search-container { display: flex; align-items: center; border: 1px; }
 .search-box { border: 1px solid #ccc; border-right: none; padding: 0.6rem; border-top-left-radius: var(--border-radius); border-bottom-left-radius: var(--border-radius); font-family: var(--font-primary); }
 .search-box:focus { outline: 1px solid var(--accent-color-1); }
 .search-btn { border: 1px solid var(--accent-color-1); background-color: var(--accent-color-1); color: var(--text-light); padding: 0.6rem 0.8rem; border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); cursor: pointer; }
