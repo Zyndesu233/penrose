@@ -265,7 +265,6 @@ ul {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
   margin-bottom: 3rem;
 }
 .workflow-step {
