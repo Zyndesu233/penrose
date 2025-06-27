@@ -9,7 +9,7 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     
-    <link rel="stylesheet" href="../src/dashboard.css">
+    <link rel="stylesheet" href="../src/dashboard/dashboard.css">
     <link rel="stylesheet" href="../src/index.css">
 </head>
 <body>
@@ -83,108 +83,11 @@
             </div>
         </section>
 
-        <section class="review-section">
-            <h2>Pending Review</h2>
-            <div class="review-controls">
-                <div class="filter-buttons">
-                    <button class="btn filter-btn">Approved</button>
-                    <button class="btn filter-btn active">Pending Approval</button>
-                    <button class="btn filter-btn">Rejected</button>
-                </div>
-                <div class="review-actions">
-                    <div class="search-container">
-                        <input type="text" placeholder="Search..." class="search-box">
-                        <button class="search-btn"><i class="fas fa-search"></i></button>
-                    </div>
-                    <div class="sort-container">
-                        <select class="sort-dropdown">
-                            <option>Sort by</option>
-                            <option>Date</option>
-                            <option>Name</option>
-                        </select>
-                    </div>
-                    <button class="btn btn-secondary">Schedule Upload</button>
-                </div>
-            </div>
-
-            <div class="review-table-container">
-                <table class="review-table">
-                    <thead>
-                        <tr>
-                            <th>Project Name</th>
-                            <th>Review Request</th>
-                            <th>Contractor Submission Date</th>
-                            <th>Owner</th>
-                            <th>Review Completion Date</th>
-                            <th>Status</th>
-                            <th>Verification</th>
-                            <th>Review Report</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Project Sky-High</td>
-                            <td>Structural Integrity Analysis</td>
-                            <td>2025-05-20</td>
-                            <td>John Doe</td>
-                            <td>2025-06-10</td>
-                            <td><span class="status-tag status-pending">Pending</span></td>
-                            <td><i class="fas fa-check-circle ai-highlight" title="AI Verified"></i></td>
-                            <td><a href="#" class="btn-link">View Report</a></td>
-                        </tr>
-                        <tr>
-                            <td>Oceanfront Residences</td>
-                            <td>MEP Drawings</td>
-                            <td>2025-05-18</td>
-                            <td>Jane Smith</td>
-                            <td>2025-06-05</td>
-                            <td><span class="status-tag status-approved">Approved</span></td>
-                            <td><i class="fas fa-check-circle" title="Manually Verified"></i></td>
-                            <td><a href="#" class="btn-link">View Report</a></td>
-                        </tr>
-                        <tr>
-                            <td>Downtown Metro Line</td>
-                            <td>Geotechnical Survey</td>
-                            <td>2025-05-15</td>
-                            <td>Robert Brown</td>
-                            <td>-</td>
-                            <td><span class="status-tag status-rejected">Rejected</span></td>
-                            <td><i class="fas fa-times-circle" title="Verification Failed"></i></td>
-                            <td><a href="#" class="btn-link">View Report</a></td>
-                        </tr>
-                        <tr>
-                            <td>Greenfield Data Center</td>
-                            <td>Environmental Impact Report</td>
-                            <td>2025-05-22</td>
-                            <td>Emily White</td>
-                            <td>-</td>
-                            <td><span class="status-tag status-pending">Pending</span></td>
-                            <td><i class="fas fa-check-circle ai-highlight" title="AI Verified"></i></td>
-                            <td><a href="#" class="btn-link">View Report</a></td>
-                        </tr>
-                        <tr>
-                            <td>City General Hospital Wing</td>
-                            <td>Architectural Blueprints</td>
-                            <td>2025-05-19</td>
-                            <td>Michael Green</td>
-                            <td>2025-06-08</td>
-                            <td><span class="status-tag status-approved">Approved</span></td>
-                            <td><i class="fas fa-check-circle" title="Manually Verified"></i></td>
-                            <td><a href="#" class="btn-link">View Report</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="pagination">
-                <button class="pagination-btn" title="Previous Page"><i class="fas fa-arrow-left"></i></button>
-                <button class="pagination-btn" title="Next Page"><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </section>
+        <section id="review-section"></section>
 
     </main>
 
-    <script src="../src/dashboard.js"></script>
-    <script src="../src/index.js"></script>
-    <script type="module" src="../src/dashboardMain.jsx"></script>
+    <script src="../src/dashboard/dashboard.js"></script>
+    <script type="module" src="../src/dashboard/dashboardMain.jsx"></script>
 </body>
 </html>

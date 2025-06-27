@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderApp from "./headerApp";
+import HeaderApp from "../common/headerApp";
+import ReviewApp from "./reviewApp.jsx";
 
 const dashboardNavList = [{
   name: "Dashboard",
@@ -26,5 +27,11 @@ const dashboardNavList = [{
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
     <HeaderApp list={dashboardNavList}/>
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(document.getElementById("review-section")).render(
+  <React.StrictMode>
+    <ReviewApp />
   </React.StrictMode>
 );

@@ -1,0 +1,23 @@
+/* --- Review Table --- */
+#review-section h2 { font-weight: 600; margin-top: 0; }
+.filter-buttons .btn { background: transparent; border: 1px solid #ccc; color: var(--text-muted); }
+.filter-buttons .btn.active { background-color: var(--secondary-color); color: var(--text-light); border-color: var(--secondary-color); }
+.review-actions { 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+}
+.sort-dropdown { padding: 0.6rem; border: 1px solid #ccc; border-radius: var(--border-radius); background-color: #fff; }
+.review-table-container { overflow-x: auto; }
+.review-table { width: 100%; border-collapse: collapse; text-align: left; }
+.review-table th, .review-table td { padding: 1rem; border-bottom: 1px solid #eee; vertical-align: middle; }
+.review-table th { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); }
+.status-tag { padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); text-align: center; }
+.status-tag.status-Approved { background-color: #d4edda; color: #155724; }
+.status-tag.status-Pending { background-color: #fff3cd; color: #856404; }
+.status-tag.status-Rejected { background-color: #f8d7da; color: #721c24; }
+.ai-highlight { color: var(--accent-color-2); font-size: 1.2rem; }
+.btn-link { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+.pagination { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
+.pagination-btn { background: transparent; border: 1px solid #ccc; border-radius: 50%; width: 36px; height: 36px; margin-left: 0.5rem; cursor: pointer; color: var(--text-muted); }
+.pagination-btn:hover { background-color: #f0f0f0; }

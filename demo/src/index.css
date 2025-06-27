@@ -1,4 +1,4 @@
-@import url(./color.css);
+@import url(./common/color.css);
 /* --- Global Styles & Variables --- */
 
 * {
@@ -195,7 +195,7 @@ ul {
   transform: translateY(0);
 }
 
-#hero-adjusted, #product-intro-adjusted, #company-intro-adjusted, #testimonial-adjusted {
+#hero-adjusted, #product-intro-adjusted, #company-intro-adjusted, #testimonials-adjusted {
   display: block;
   position: relative;
   top: -70px;
@@ -566,9 +566,6 @@ ul {
   .mobile-nav-toggle {
       display: block; /* Show hamburger */
   }
-  #main-header .header-actions .btn-small {
-      /* Optionally hide one button or make them smaller */
-  }
 
   h1 { font-size: 2rem; }
   h2 { font-size: 1.8rem; }
@@ -602,10 +599,6 @@ ul {
 @media (min-width: 769px) { /* Show workflow arrows on larger screens */
   .workflow-arrow {
       display: block;
-  }
-  .workflow-diagram {
-     /* Re-adjust basis if arrows take up space, or ensure they don't expand parent */
-     /* This might need fine-tuning depending on exact arrow styling */
   }
    .workflow-step {
       flex-basis: calc(100% / 5 - 2.5rem);
