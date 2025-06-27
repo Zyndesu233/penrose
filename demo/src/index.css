@@ -377,6 +377,10 @@ ul {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-medium);
 }
+.testimonial-carousel span {
+  display: flex;
+  justify-content: center;
+}
 .testimonial-slide {
   display: none; /* Hidden by default */
   text-align: center;
@@ -401,9 +405,8 @@ ul {
 }
 .client-logo {
   max-height: 40px;
+  max-width: 200px;
   margin-top: 1rem;
-  opacity: 0.7;
-  filter: grayscale(50%);
 }
 .carousel-controls {
   text-align: center;
