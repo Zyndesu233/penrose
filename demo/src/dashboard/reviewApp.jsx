@@ -53,6 +53,26 @@ function ReviewApp() {
         }
     ]);
 
+    // Handling sort function
+    const byContractorSubmissionDate = (o1, o2) => {
+        if(o1.contractorSubmissionDate === o2.contractorSubmissionDate || !o1.contractorSubmissionDate || !o2.contractorSubmissionDate) return 0;
+        return o1.contractorSubmissionDate < o2.contractorSubmissionDate? 1: -1;
+    }
+
+    const byProjectNameName = (o1, o2) => {
+        if(o1.projectName === o2.projectName || !o1.projectName || !o2.projectName) return 0;
+        return o1.projectName < o2.projectName? 1: -1;
+    }
+
+    function sortReviewBy(byWhat) {
+        let tempPendingReview = [...pendingReview];
+        if(byWhat==="ContractorSubmissionDate")
+            tempPendingReview.sort(byContractorSubmissionDate);
+        if(byWhat==="ProjectName")
+            tempPendingReview.sort(byProjectNameName);
+        setPendingReview(tempPendingReview);
+    }
+
     return (
         <>
             <h2>Pending Review</h2>
@@ -69,9 +89,9 @@ function ReviewApp() {
                     </div>
                     <div className="sort-container">
                         <select className="sort-dropdown">
-                            <option>Sort by</option>
-                            <option>Date</option>
-                            <option>Name</option>
+                            <option value="" disabled selected>Sort by</option>
+                            <option value="">Date</option>
+                            <option value="">Name</option>
                         </select>
                     </div>
                     <button className="btn btn-secondary">Schedule Upload</button>
