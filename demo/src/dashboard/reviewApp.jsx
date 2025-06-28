@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import SortReview from "./sortReview";
 import "./reviewApp.css"
 
 function ReviewApp() {
-    const [pendingReview, setPendingReview] = useState([
+    let reviewList = [
         {
             projectName: "Project Sky-High",
             reviewRequest: "Structral Integrity Analysis",
@@ -51,26 +52,14 @@ function ReviewApp() {
             verification: "Manually Verified",
             reviewReport: ""
         }
-    ]);
+    ];
 
-    // Handling sort function
-    const byContractorSubmissionDate = (o1, o2) => {
-        if(o1.contractorSubmissionDate === o2.contractorSubmissionDate || !o1.contractorSubmissionDate || !o2.contractorSubmissionDate) return 0;
-        return o1.contractorSubmissionDate < o2.contractorSubmissionDate? 1: -1;
-    }
+    const [pendingReview, setPendingReview] = useState(reviewList);
 
-    const byProjectNameName = (o1, o2) => {
-        if(o1.projectName === o2.projectName || !o1.projectName || !o2.projectName) return 0;
-        return o1.projectName < o2.projectName? 1: -1;
-    }
-
-    function sortReviewBy(byWhat) {
-        let tempPendingReview = [...pendingReview];
-        if(byWhat==="ContractorSubmissionDate")
-            tempPendingReview.sort(byContractorSubmissionDate);
-        if(byWhat==="ProjectName")
-            tempPendingReview.sort(byProjectNameName);
-        setPendingReview(tempPendingReview);
+    function filterReview(statusTarget) {
+        console.log(`statusTarget: ${statusTarget}`);
+        let tempReviewList = [...reviewList].filter((e)=>(e.status===statusTarget));
+        setPendingReview(tempReviewList);
     }
 
     return (
@@ -78,21 +67,17 @@ function ReviewApp() {
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
-                    <button className="btn filter-btn">Approved</button>
-                    <button className="btn filter-btn active">Pending Approval</button>
-                    <button className="btn filter-btn">Rejected</button>
+                    <button className="btn filter-btn" onClick={()=>(filterReview("Approved"))}>Approved</button>
+                    <button className="btn filter-btn active" onClick={()=>(filterReview("Pending"))}>Pending</button>
+                    <button className="btn filter-btn" onClick={()=>(filterReview("Rejected"))}>Rejected</button>
                 </div>
                 <div className="review-actions">
                     <div className="search-container">
                         <input type="text" placeholder="Search..." className="search-box" />
                         <button className="search-btn"><i className="fas fa-search"></i></button>
                     </div>
-                    <div className="sort-container">
-                        <select className="sort-dropdown">
-                            <option value="" disabled selected>Sort by</option>
-                            <option value="">Date</option>
-                            <option value="">Name</option>
-                        </select>
+                    <div id="sort-container">
+                        <SortReview />
                     </div>
                     <button className="btn btn-secondary">Schedule Upload</button>
                 </div>
