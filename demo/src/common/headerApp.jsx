@@ -5,7 +5,7 @@ function HeaderApp({list}) {
     return ( 
         <div className="container">
             <div className="logo">
-                <a href="#hero" className="logo-link">
+                <a href="../../index.html" className="logo-link">
                     <img src="../img/Logo BW.png" alt="Penrose Logo" className="logo-image" />
                 </a>
             </div>

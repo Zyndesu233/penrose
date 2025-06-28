@@ -5,11 +5,11 @@ import ReviewApp from "./reviewApp.jsx";
 
 const dashboardNavList = [{
   name: "Dashboard",
-  link: "#"
+  link: "../page/dashboard.html"
 },
 {
   name: "Projects",
-  link: "#"
+  link: "../page/projectReview.html"
 },
 {
   name: "Program",
