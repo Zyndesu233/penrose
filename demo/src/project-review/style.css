@@ -34,31 +34,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- NAVIGATION BAR --- */
-.navbar {
-    background-color: var(--text-light);
-    box-shadow: var(--shadow-soft);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-bottom: 1px solid #E0E0E0;
-}
-
-.navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
 
 /* --- MAIN CONTENT AREA --- */
 .main-container {
@@ -80,15 +55,43 @@ body {
 
 /* --- CONTROLS SECTION --- */
 .controls-section {
+    margin-bottom: 2rem;
+}
+
+.search-and-add {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
     align-items: center;
     margin-bottom: 2rem;
+}
+
+.search-box { 
+    border: 1px solid #ccc; 
+    border-right: none; 
+    padding: 0.6rem; 
+    border-top-left-radius: var(--border-radius); 
+    border-bottom-left-radius: var(--border-radius); 
+    font-family: var(--font-primary); 
+}
+
+.search-btn { 
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 0.6rem 0.8rem;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    cursor: pointer; 
+}
+
+.search-box:focus { 
+    outline: 1px solid var(--accent-color); 
 }
 
 .filter-buttons {
     display: flex;
     gap: 0.75rem;
+    justify-content: center;
 }
 
 /* --- BUTTON STYLES --- */
@@ -109,6 +112,7 @@ body {
 .btn-primary {
     background-color: var(--primary-color);
     color: var(--text-light);
+    margin-left: 0.5rem;
 }
 
 .btn-primary:hover {
