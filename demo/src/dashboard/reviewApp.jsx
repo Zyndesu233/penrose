@@ -55,10 +55,15 @@ function ReviewApp() {
     ];
 
     const [pendingReview, setPendingReview] = useState(reviewList);
+    const [searchReviewKeywords, setSearchReviewKeywords] = useState("");
 
     function filterReview(statusTarget) {
-        console.log(`statusTarget: ${statusTarget}`);
         let tempReviewList = [...reviewList].filter((e)=>(e.status===statusTarget));
+        setPendingReview(tempReviewList);
+    }
+
+    function searchReview(keywords) {
+        let tempReviewList = [...reviewList].filter((e)=>(e.projectName.includes(keywords)));
         setPendingReview(tempReviewList);
     }
 
@@ -67,14 +72,15 @@ function ReviewApp() {
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
+                    <button className="btn filter-btn active" onClick={()=>(setPendingReview(reviewList))}>All</button>
                     <button className="btn filter-btn" onClick={()=>(filterReview("Approved"))}>Approved</button>
-                    <button className="btn filter-btn active" onClick={()=>(filterReview("Pending"))}>Pending</button>
+                    <button className="btn filter-btn" onClick={()=>(filterReview("Pending"))}>Pending</button>
                     <button className="btn filter-btn" onClick={()=>(filterReview("Rejected"))}>Rejected</button>
                 </div>
                 <div className="review-actions">
                     <div className="search-container">
-                        <input type="text" placeholder="Search..." className="search-box" />
-                        <button className="search-btn"><i className="fas fa-search"></i></button>
+                        <input type="text" placeholder="Search..." className="search-box" value={searchReviewKeywords} onChange={(e)=>(setSearchReviewKeywords(e.target.value))} />
+                        <button className="search-btn" onClick={()=>(searchReview(searchReviewKeywords))}><i className="fas fa-search"></i></button>
                     </div>
                     <div id="sort-container">
                         <SortReview />
