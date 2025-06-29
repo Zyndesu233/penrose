@@ -50,7 +50,7 @@ body {
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
 }
 
 /* --- CONTROLS SECTION --- */
@@ -62,7 +62,7 @@ body {
     display: flex;
     justify-content: right;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .search-box { 

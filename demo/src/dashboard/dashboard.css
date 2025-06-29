@@ -153,7 +153,7 @@ body {
 /* --- View Toggle --- */
 .view-toggle .toggle-btn { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 0.5rem 1rem; cursor: pointer; font-size: 0.9rem; font-weight: 500; }
 .view-toggle .toggle-btn:first-child { border-top-left-radius: var(--border-radius); border-bottom-left-radius: var(--border-radius); }
-.view-toggle .toggle-btn:last-child { border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); border-left: none; }
+.view-toggle .toggle-btn:last-child { border-top-right-radius: var(--border-radius); border-bottom-right-radius: var(--border-radius); }
 .view-toggle .toggle-btn.active { background: var(--primary-color); color: var(--text-light); }
 
 /* --- Content Grid & Cards --- */
