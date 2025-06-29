@@ -1,6 +1,11 @@
 /* --- Review Table --- */
 #review-section h2 { font-weight: 600; margin-top: 0; }
-.filter-buttons .btn { background: transparent; border: 1px solid #ccc; color: var(--text-muted); }
+.filter-buttons .btn { 
+    background: transparent;
+    border: 1px solid #ccc;
+    color: var(--text-muted);
+    width: 9vw;
+}
 .filter-buttons .btn.active { background-color: var(--secondary-color); color: var(--text-light); border-color: var(--secondary-color); }
 .review-actions { 
     display: flex; 
