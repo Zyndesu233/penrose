@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import HeaderApp from "../common/headerApp.jsx";
+import ProjectApp from "./projectApp.jsx";
 
 const projectReviewNavList = [{
   name: "Dashboard",
@@ -27,5 +28,11 @@ const projectReviewNavList = [{
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
     <HeaderApp list={projectReviewNavList}/>
+  </React.StrictMode>
+);
+
+ReactDOM.createRoot(document.getElementById("main-container")).render(
+  <React.StrictMode>
+    <ProjectApp />
   </React.StrictMode>
 );
