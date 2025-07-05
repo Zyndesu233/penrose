@@ -56,10 +56,17 @@ function ReviewApp() {
 
     const [pendingReview, setPendingReview] = useState(reviewList);
     const [searchReviewKeywords, setSearchReviewKeywords] = useState("");
+    const [filterStatus, setFilterStatus] = useState("All");
 
     function filterReview(statusTarget) {
         let tempReviewList = [...reviewList].filter((e)=>(e.status===statusTarget));
         setPendingReview(tempReviewList);
+        setFilterStatus(statusTarget);
+    }
+
+    function initializeProject() {
+        setPendingReview(reviewList);
+        setFilterStatus("all");
     }
 
     function searchReview(keywords) {
@@ -72,10 +79,10 @@ function ReviewApp() {
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
-                    <button className="btn filter-btn active" onClick={()=>(setPendingReview(reviewList))}>All</button>
-                    <button className="btn filter-btn" onClick={()=>(filterReview("Approved"))}>Approved</button>
-                    <button className="btn filter-btn" onClick={()=>(filterReview("Pending"))}>Pending</button>
-                    <button className="btn filter-btn" onClick={()=>(filterReview("Rejected"))}>Rejected</button>
+                    <button className={filterStatus==="All"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="Approved"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Approved"))}>Approved</button>
+                    <button className={filterStatus==="Pending"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Pending"))}>Pending</button>
+                    <button className={filterStatus==="Rejected"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Rejected"))}>Rejected</button>
                 </div>
                 <div className="review-actions">
                     <div className="search-container">
