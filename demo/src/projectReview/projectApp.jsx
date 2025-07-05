@@ -4,7 +4,7 @@ import projects from "./projectList.json"
 
 function ProjectApp() {
     const [projectList, setProjectList] = useState(projects);
-    const [filterStatus, setFilterStatus] = useState("");
+    const [filterStatus, setFilterStatus] = useState("all");
 
     /* for later api use
     useEffect(()=>{
@@ -13,6 +13,17 @@ function ProjectApp() {
         .then((Data) => (setProjectList(Data)));
     }, []); 
     */
+
+    function filterProject(statusTarget) {
+        let tempProjectList = [...projects].filter((e)=>(e.status===statusTarget));
+        setProjectList(tempProjectList);
+        setFilterStatus(statusTarget);
+    }
+
+    function initializeProject() {
+        setProjectList(projects);
+        setFilterStatus("all");
+    }
 
     return (
         <>
@@ -31,9 +42,10 @@ function ProjectApp() {
                     </div>
                 </div>
                 <div className="filter-buttons">
-                    <button className="btn filter-btn" data-filter="late">Late</button>
-                    <button className="btn filter-btn" data-filter="on-time">On time</button>
-                    <button className="btn filter-btn" data-filter="onboarding">Onboarding</button>
+                    <button className={filterStatus==="all"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="late"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("late"))}>Late</button>
+                    <button className={filterStatus==="on-time"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("on-time"))}>On time</button>
+                    <button className={filterStatus==="onboarding"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("onboarding"))}>Onboarding</button>
                 </div>
             </section>
 
