@@ -4,7 +4,8 @@ import projects from "./projectList.json"
 
 function ProjectApp() {
     const [projectList, setProjectList] = useState(projects);
-    console.log(projectList);
+    const [filterStatus, setFilterStatus] = useState("");
+
     /* for later api use
     useEffect(()=>{
         fetch(API)
@@ -12,6 +13,7 @@ function ProjectApp() {
         .then((Data) => (setProjectList(Data)));
     }, []); 
     */
+
     return (
         <>
             <header className="main-header">
