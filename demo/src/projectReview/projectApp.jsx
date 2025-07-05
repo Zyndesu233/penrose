@@ -5,6 +5,7 @@ import projects from "./projectList.json"
 function ProjectApp() {
     const [projectList, setProjectList] = useState(projects);
     const [filterStatus, setFilterStatus] = useState("all");
+    const [searchProjectKeywords, setsearchProjectKeywords] = useState("");
 
     /* for later api use
     useEffect(()=>{
@@ -25,6 +26,12 @@ function ProjectApp() {
         setFilterStatus("all");
     }
 
+    function searchProject(keywords) {
+        let tempProjectList = [...projects].filter((e)=>(e.title.includes(keywords)));
+        setProjectList(tempProjectList);
+    }
+
+
     return (
         <>
             <header className="main-header">
@@ -34,8 +41,8 @@ function ProjectApp() {
             <section className="controls-section">
                 <div className="search-and-add">
                     <div className="search-container">
-                        <input type="text" placeholder="Search Projects..." className="search-box" />
-                        <button className="search-btn"><i className="fas fa-search"></i></button>
+                        <input type="text" placeholder="Search Projects..." className="search-box" value={searchProjectKeywords} onChange={(e)=>(setsearchProjectKeywords(e.target.value))} />
+                        <button className="search-btn" onClick={()=>(searchProject(searchProjectKeywords))}><i className="fas fa-search"></i></button>
                     </div>
                     <div className="add-project-button">
                         <button className="btn btn-primary">Add Project</button>
@@ -53,9 +60,9 @@ function ProjectApp() {
                 {projectList.map((e, i) => (
                     <div className="project-block" key={i}>
                         <img src={`${e.img}&auto=format&fit=crop&w=400`} alt={e.title} class="project-block-cover" />
-                        <div class="project-block-content">
-                            <h3 class="project-block-title">{e.title}</h3>
-                            <p class="project-block-description">{e.description}</p>
+                        <div className="project-block-content">
+                            <h3 className="project-block-title">{e.title}</h3>
+                            <p className="project-block-description">{e.description}</p>
                         </div>
                     </div>
                 ))}
