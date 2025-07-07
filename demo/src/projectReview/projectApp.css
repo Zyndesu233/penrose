@@ -18,7 +18,7 @@
 
 /* --- CONTROLS SECTION --- */
 .controls-section {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; 
 }
 
 .search-and-add {
@@ -103,15 +103,31 @@
 .filter-btn {
     background-color: #E9ECEF;
     color: var(--text-dark);
+    width: 9vw;
 }
 
 .filter-btn:hover {
     background-color: #CED4DA;
 }
 
-.filter-btn.active {
+.filter-btn.active.no-status { 
     background-color: var(--primary-color);
     color: var(--text-light);
+}
+
+.filter-btn.active.status-late {
+    background-color: #f8d7da; /* Light red for late status */
+    color: #721c24; /* Dark red text */
+}
+
+.filter-btn.active.status-on-time {
+    background-color: #d4edda; /* Light green for on-time status */
+    color: #155724; /* Dark green text */
+}
+
+.filter-btn.active.status-onboarding {
+    background-color: #fff3cd; /* Light yellow for onboarding status */
+    color: #856404; /* Dark yellow text */
 }
 
 /* --- PROJECT GRID --- */

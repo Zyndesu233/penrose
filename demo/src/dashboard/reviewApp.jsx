@@ -79,10 +79,10 @@ function ReviewApp() {
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
-                    <button className={filterStatus==="All"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
-                    <button className={filterStatus==="Approved"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Approved"))}>Approved</button>
-                    <button className={filterStatus==="Pending"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Pending"))}>Pending</button>
-                    <button className={filterStatus==="Rejected"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterReview("Rejected"))}>Rejected</button>
+                    <button className={filterStatus==="All"? "btn filter-btn active no-status": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="Approved"? "btn filter-btn active status-approved": "btn filter-btn"} onClick={()=>(filterReview("Approved"))}>Approved</button>
+                    <button className={filterStatus==="Pending"? "btn filter-btn active status-pending": "btn filter-btn"} onClick={()=>(filterReview("Pending"))}>Pending</button>
+                    <button className={filterStatus==="Rejected"? "btn filter-btn active status-rejected": "btn filter-btn"} onClick={()=>(filterReview("Rejected"))}>Rejected</button>
                 </div>
                 <div className="review-actions">
                     <div className="search-container">

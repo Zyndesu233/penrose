@@ -49,10 +49,10 @@ function ProjectApp() {
                     </div>
                 </div>
                 <div className="filter-buttons">
-                    <button className={filterStatus==="all"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
-                    <button className={filterStatus==="late"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("late"))}>Late</button>
-                    <button className={filterStatus==="on-time"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("on-time"))}>On time</button>
-                    <button className={filterStatus==="onboarding"? "btn filter-btn active": "btn filter-btn"} onClick={()=>(filterProject("onboarding"))}>Onboarding</button>
+                    <button className={filterStatus==="all"? "btn filter-btn active no-status": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="late"? "btn filter-btn active status-late": "btn filter-btn"} onClick={()=>(filterProject("late"))}>Late</button>
+                    <button className={filterStatus==="on-time"? "btn filter-btn active status-on-time": "btn filter-btn"} onClick={()=>(filterProject("on-time"))}>On time</button>
+                    <button className={filterStatus==="onboarding"? "btn filter-btn active status-onboarding": "btn filter-btn"} onClick={()=>(filterProject("onboarding"))}>Onboarding</button>
                 </div>
             </section>
 

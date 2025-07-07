@@ -6,7 +6,28 @@
     color: var(--text-muted);
     width: 9vw;
 }
-.filter-buttons .btn.active { background-color: var(--secondary-color); color: var(--text-light); border-color: var(--secondary-color); }
+
+/* later decide if we want to set color for no status */
+/* .filter-btn.active.no-status {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+} */
+
+.filter-btn.active.status-approved {
+    background-color: #d4edda; /* Light green for approved status */
+    color: #155724; /* Dark green text */
+}
+
+.filter-btn.active.status-pending {
+    background-color: #fff3cd; /* Light yellow for pending status */
+    color: #856404; /* Dark yellow text */
+}
+
+.filter-btn.active.status-rejected {
+    background-color: #f8d7da; /* Light red for rejected status */
+    color: #721c24; /* Dark red text */
+}
+
 .review-actions { 
     display: flex; 
     align-items: center; 
