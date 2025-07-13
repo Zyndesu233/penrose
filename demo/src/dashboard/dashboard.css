@@ -25,53 +25,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- Layout --- */
-/* .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--text-light);
-    padding: 1rem 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box;
-    box-shadow: var(--shadow-soft);
-    z-index: 1000;
-}
-
-.main-content {
-    padding: 80px 2rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-} */
-
-/* --- Navigation Bar --- */
-/* .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
-.nav-link {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: var(--text-muted);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-.nav-link.active { color: var(--primary-color); font-weight: 600; }
-.nav-link:hover { color: var(--primary-color); } */
-
-/* .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.logo-image {
-  max-width: 100%;
-  width: 150px;
-  height: auto;
-} */
-
 /* main content margin */
 .main-content {
     /* padding: 80px 2rem 2rem; */
