@@ -1,3 +1,5 @@
+@import url(../common/color.css);
+
 /* --- Review Table --- */
 #review-section h2 { font-weight: 600; margin-top: 0; }
 .filter-buttons .btn { 
@@ -42,7 +44,7 @@
 .status-tag.status-Approved { background-color: #d4edda; color: #155724; }
 .status-tag.status-Pending { background-color: #fff3cd; color: #856404; }
 .status-tag.status-Rejected { background-color: #f8d7da; color: #721c24; }
-.ai-highlight { color: var(--accent-color-2); font-size: 1.2rem; }
+.ai-highlight { color: var(--accent-color-alt); font-size: 1.2rem; }
 .btn-link { color: var(--primary-color); text-decoration: none; font-weight: 500; }
 .pagination { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
 .pagination-btn { background: transparent; border: 1px solid #ccc; border-radius: 50%; width: 36px; height: 36px; margin-left: 0.5rem; cursor: pointer; color: var(--text-muted); }

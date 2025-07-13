@@ -8,6 +8,11 @@
   --text-light: #FFFFFF;
   --text-dark: #333333;
   --text-muted: #6c757d;
+  --btn-hover-orange: #e06f0f; /*Darker orange Hover underline color for buttons */
+  --light-gray: #adb5bd;
+  --green-status-bg: #28a745;
+  --yellow-status-bg: #ffc107;
+  --red-status-bg: #dc3545;
   --font-family: 'Montserrat', sans-serif;
   --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
