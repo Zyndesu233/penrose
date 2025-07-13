@@ -67,7 +67,7 @@ function ReviewApp() {
 
     function initializeProject() {
         setPendingReview(reviewList);
-        setFilterStatus("all");
+        setFilterStatus("All");
     }
 
     function searchReview(keywords) {

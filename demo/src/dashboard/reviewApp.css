@@ -13,6 +13,8 @@
     color: var(--text-light);
 } */
 
+.filter-btn.active { background-color: var(--secondary-color); color: var(--text-light); border-color: var(--secondary-color); }
+
 .filter-btn.active.status-approved {
     background-color: #d4edda; /* Light green for approved status */
     color: #155724; /* Dark green text */
