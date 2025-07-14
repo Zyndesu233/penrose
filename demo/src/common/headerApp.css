@@ -1,12 +1,12 @@
 @import url(./color.css);
 
- .btn-secondary {
+ .btn-2 {
   background-color: transparent;
   color: var(--primary-color);
   border: 2px solid var(--primary-color);
   text-decoration: none;
 }
-.btn-secondary:hover {
+.btn-2:hover {
   background-color: var(--primary-color);
   color: var(--text-light);
   transform: translateY(-2px);
@@ -36,7 +36,7 @@
   transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
-#main-header .container {
+#main-header .nav-bar {
   height: 40px;
   width: 90%;
   max-width: 1200px;

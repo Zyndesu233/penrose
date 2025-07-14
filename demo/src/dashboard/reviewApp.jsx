@@ -117,7 +117,7 @@ function ReviewApp() {
                         </select>
                         <button className="search-btn" onClick={()=>(sortReviewBy(sortBy))}><i className="fas fa-sort"></i></button>
                     </div>
-                    <button className="btn btn-secondary">Schedule Upload</button>
+                    <button className="btn btn-2">Schedule Upload</button>
                 </div>
             </div>
 

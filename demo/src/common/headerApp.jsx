@@ -3,7 +3,7 @@ import "./headerApp.css";
 
 function HeaderApp({list}) {
     return ( 
-        <div className="container">
+        <div className="nav-bar">
             <div className="logo">
                 <a href="../../index.html" className="logo-link">
                     <img src="../img/Logo BW.png" alt="Penrose Logo" className="logo-image" />
@@ -15,7 +15,7 @@ function HeaderApp({list}) {
                 </ul>
             </nav>
             <div className="header-actions">
-                <a href="#" className="btn btn-secondary btn-small">Sign In</a>
+                <a href="#" className="btn btn-2 btn-small">Sign In</a>
             </div>
             <button className="mobile-nav-toggle" aria-label="Toggle navigation">
                 <span className="hamburger-icon"></span>
