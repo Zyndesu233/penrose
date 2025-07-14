@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SortReview from "./sortReview";
 import "./reviewApp.css"
 
 function ReviewApp() {
@@ -57,7 +56,9 @@ function ReviewApp() {
     const [pendingReview, setPendingReview] = useState(reviewList);
     const [searchReviewKeywords, setSearchReviewKeywords] = useState("");
     const [filterStatus, setFilterStatus] = useState("All");
+    const [sortBy, setSortBy] = useState("ContractorSubmissionDate");
 
+    // filter
     function filterReview(statusTarget) {
         let tempReviewList = [...reviewList].filter((e)=>(e.status===statusTarget));
         setPendingReview(tempReviewList);
@@ -66,7 +67,7 @@ function ReviewApp() {
 
     function initializeProject() {
         setPendingReview(reviewList);
-        setFilterStatus("all");
+        setFilterStatus("All");
     }
 
     function searchReview(keywords) {
@@ -74,12 +75,32 @@ function ReviewApp() {
         setPendingReview(tempReviewList);
     }
 
+    // sort
+    const byContractorSubmissionDate = (o1, o2) => {
+        if(o1.contractorSubmissionDate === o2.contractorSubmissionDate || !o1.contractorSubmissionDate || !o2.contractorSubmissionDate) return 0;
+        return o1.contractorSubmissionDate < o2.contractorSubmissionDate? 1: -1;
+    }
+
+    const byProjectNameName = (o1, o2) => {
+        if(o1.projectName === o2.projectName || !o1.projectName || !o2.projectName) return 0;
+        return o1.projectName < o2.projectName? 1: -1;
+    }
+
+    function sortReviewBy(byWhat) {
+        let tempPendingReview = [...pendingReview];
+        if(byWhat==="ContractorSubmissionDate")
+            tempPendingReview.sort(byContractorSubmissionDate);
+        if(byWhat==="ProjectName")
+            tempPendingReview.sort(byProjectNameName);
+        setPendingReview(tempPendingReview);
+    }
+
     return (
         <>
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
-                    <button className={filterStatus==="All"? "btn filter-btn active no-status": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="All"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
                     <button className={filterStatus==="Approved"? "btn filter-btn active status-approved": "btn filter-btn"} onClick={()=>(filterReview("Approved"))}>Approved</button>
                     <button className={filterStatus==="Pending"? "btn filter-btn active status-pending": "btn filter-btn"} onClick={()=>(filterReview("Pending"))}>Pending</button>
                     <button className={filterStatus==="Rejected"? "btn filter-btn active status-rejected": "btn filter-btn"} onClick={()=>(filterReview("Rejected"))}>Rejected</button>
@@ -90,7 +111,11 @@ function ReviewApp() {
                         <button className="search-btn" onClick={()=>(searchReview(searchReviewKeywords))}><i className="fas fa-search"></i></button>
                     </div>
                     <div id="sort-container">
-                        <SortReview />
+                        <select className="sort-dropdown" value={sortBy} onChange={(e)=>(setSortBy(e.target.value))}>
+                            <option value="ContractorSubmissionDate">Sort By Date</option>
+                            <option value="ProjectName">Sort By Name</option>
+                        </select>
+                        <button className="search-btn" onClick={()=>(sortReviewBy(sortBy))}><i className="fas fa-sort"></i></button>
                     </div>
                     <button className="btn btn-secondary">Schedule Upload</button>
                 </div>
