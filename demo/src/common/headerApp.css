@@ -1,22 +1,5 @@
 @import url(./color.css);
 
-/* .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-} */
-
-/* .btn-secondary {
-  background-color: transparent;
-  color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-}
-.btn-secondary:hover {
-  background-color: var(--primary-color);
-  color: var(--text-light);
-  transform: translateY(-2px);
-} */
  .btn-secondary {
   background-color: transparent;
   color: var(--primary-color);
@@ -45,7 +28,7 @@
 #main-header {
   line-height: 1.6;
   background-color: var(--text-light);
-  padding: 1rem 0;
+  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -54,6 +37,7 @@
 }
 
 #main-header .container {
+  height: 40px;
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
