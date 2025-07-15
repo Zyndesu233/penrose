@@ -1,27 +1,23 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
 /* --- DESIGN SYSTEM: CSS VARIABLES --- */
-:root {
-    /* Core Color Palette */
-    --primary-color: #0A2463;     /* Deep Blue */
-    --secondary-color: #2F2F2F;   /* Industrial Gray */
-    --accent-color: #FF7F11;      /* Safety Orange */
-    --accent-color-alt: #00C4CC;  /* AI Teal */
-    --background-dark: #3E6680;   /* Steel Gray */
+/* :root {
+    --primary-color: #0A2463;   
+    --secondary-color: #2F2F2F;  
+    --accent-color: #FF7F11;     
+    --accent-color-alt: #00C4CC;
+    --background-dark: #3E6680;   
     --text-light: #FFFFFF;
     --text-dark: #333333;
     --text-muted: #6c757d;
-    --body-bg-color: #F8F9FA;
+    --background-light: #F8F9FA;
 
-    /* UI Elements Style */
+ 
     --shadow-soft: 0 4px 8px rgba(0, 0, 0, 0.05);
     --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.1);
     --border-radius: 6px;
-}
+} */
 
 /* --- GLOBAL STYLES --- */
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -29,7 +25,25 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--body-bg-color);
+    background-color: var(--background-light);
     color: var(--text-dark);
+    line-height: 1.6;
+} */
+
+
+@import url(../common/color.css);
+@import url(../common/btn.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    margin: 0;
     line-height: 1.6;
 }

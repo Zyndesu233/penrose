@@ -9,6 +9,7 @@
   cursor: pointer;
   border: none;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 /* oragne btn (btn-primary)*/
@@ -32,8 +33,8 @@
 }
 
 .btn-2:hover {
-  background-color: transparent;
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: var(--text-light);
   border: 2px solid var(--primary-color);
 }
 

@@ -1,3 +1,5 @@
+@import url(../common/color.css);
+@import url(../common/btn.css);
 /* --- MAIN CONTENT AREA --- */
 #main-container {
     max-width: 1200px;
@@ -13,7 +15,7 @@
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--primary-color);
-    margin-bottom: 0rem;
+    margin: 0;
 }
 
 /* --- CONTROLS SECTION --- */
@@ -58,46 +60,8 @@
 }
 
 /* --- BUTTON STYLES --- */
-.btn {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    margin-left: 0.5rem;
-}
-
-.btn-primary:hover {
-    opacity: 0.9;
-}
-
-.btn-secondary {
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-}
-
-.btn-secondary:hover {
-    background-color: #4a4a4a;
-}
-
-.btn-accent {
-    background-color: var(--accent-color);
-    color: var(--text-light);
-}
-
-.btn-accent:hover {
-    background-color: #e66a00;
+.search-and-add .btn-1 {
+    margin-left: 0.75rem;
 }
 
 .filter-btn {

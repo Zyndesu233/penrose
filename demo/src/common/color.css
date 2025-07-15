@@ -21,3 +21,12 @@
   --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
   --border-radius: 6px;
 }
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+}
