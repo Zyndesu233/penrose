@@ -94,15 +94,15 @@
     color: #856404; /* Dark yellow text */
 }
 
-/* --- PROJECT GRID --- */
-.project-grid {
+/* --- PROGRAM GRID --- */
+.program-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
 
-/* Individual Project Block */
-.project-block {
+/* Individual Program Block */
+.program-block {
     background-color: var(--text-light);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
@@ -110,38 +110,38 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.project-block:hover {
+.program-block:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-medium);
 }
 
-.project-block-cover {
+.program-block-cover {
     width: 100%;
     height: 180px;
     object-fit: cover;
 }
 
-.project-block-content {
+.program-block-content {
     padding-top: 1rem;
     padding-bottom: 1.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 
-.project-block-title {
+.program-block-title {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-dark);
 }
 
-.project-block-description {
+.program-block-description {
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
 /* --- SKELETON LOADING EFFECT --- */
-.project-block-skeleton {
+.program-block-skeleton {
     background-color: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-soft);
@@ -192,13 +192,13 @@
 
 /* --- RESPONSIVE DESIGN --- */
 @media (max-width: 992px) {
-    .project-grid {
+    .program-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
-    .project-grid {
+    .program-grid {
         grid-template-columns: 1fr;
     }
 

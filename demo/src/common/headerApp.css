@@ -1,5 +1,5 @@
 @import url(./color.css);
-@import url(../common/btn.css);
+@import url(./btn.css);
 
 /* --- Responsive Logo Size --- */
 .logo-image {
