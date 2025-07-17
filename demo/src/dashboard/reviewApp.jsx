@@ -2,6 +2,28 @@ import React, { useState } from "react";
 import "./reviewApp.css"
 
 function ReviewApp() {
+    const tableHeaderList = [
+        {
+            name: "Project Name",
+            property: "projectName"
+        },
+        {
+            name: "Review Request",
+            property: "reviewRequest"
+        },
+        {
+            name: "Contractor Submission Date",
+            property: "contractorSubmissionDate"
+        },
+        {
+            name: "Owner",
+            property: "owner"
+        },
+        {
+            name: "Review Completion Date",
+            property: "reviewCompletionDate"
+        }
+    ];
     let reviewList = [
         {
             projectName: "Project Sky-High",
@@ -56,7 +78,6 @@ function ReviewApp() {
     const [pendingReview, setPendingReview] = useState(reviewList);
     const [searchReviewKeywords, setSearchReviewKeywords] = useState("");
     const [filterStatus, setFilterStatus] = useState("All");
-    const [sortBy, setSortBy] = useState("ContractorSubmissionDate");
 
     // filter
     function filterReview(statusTarget) {
@@ -76,24 +97,27 @@ function ReviewApp() {
     }
 
     // sort
-    const byContractorSubmissionDate = (o1, o2) => {
-        if(o1.contractorSubmissionDate === o2.contractorSubmissionDate || !o1.contractorSubmissionDate || !o2.contractorSubmissionDate) return 0;
-        return o1.contractorSubmissionDate < o2.contractorSubmissionDate? 1: -1;
+    const [sortOrder, setSortOrder] = useState("Ascending");
+    function mySort(property) {
+        const compareFunctionAscending = (o1, o2) => {
+            if(o1[property] === o2[property]) return 0;
+                return o1[property] > o2[property]? 1: -1;
+        }
+        const compareFunctionDescending = (o1, o2) => {
+            if(o1[property] === o2[property]) return 0;
+                return o1[property] < o2[property]? 1: -1;
+        }
+        if(sortOrder === "Ascending") {
+            let tempReviewList = [...pendingReview].sort(compareFunctionAscending);
+            setPendingReview(tempReviewList);
+            setSortOrder("Descending");
+        } else if(sortOrder === "Descending") {
+            let tempReviewList = [...pendingReview].sort(compareFunctionDescending);
+            setPendingReview(tempReviewList);
+            setSortOrder("Ascending");
+        }
     }
 
-    const byProjectNameName = (o1, o2) => {
-        if(o1.projectName === o2.projectName || !o1.projectName || !o2.projectName) return 0;
-        return o1.projectName < o2.projectName? 1: -1;
-    }
-
-    function sortReviewBy(byWhat) {
-        let tempPendingReview = [...pendingReview];
-        if(byWhat==="ContractorSubmissionDate")
-            tempPendingReview.sort(byContractorSubmissionDate);
-        if(byWhat==="ProjectName")
-            tempPendingReview.sort(byProjectNameName);
-        setPendingReview(tempPendingReview);
-    }
 
     return (
         <>
@@ -110,13 +134,6 @@ function ReviewApp() {
                         <input type="text" placeholder="Search..." className="search-box" value={searchReviewKeywords} onChange={(e)=>(setSearchReviewKeywords(e.target.value))} />
                         <button className="search-btn" onClick={()=>(searchReview(searchReviewKeywords))}><i className="fas fa-search"></i></button>
                     </div>
-                    <div id="sort-container">
-                        <select className="sort-dropdown" value={sortBy} onChange={(e)=>(setSortBy(e.target.value))}>
-                            <option value="ContractorSubmissionDate">Sort By Date</option>
-                            <option value="ProjectName">Sort By Name</option>
-                        </select>
-                        <button className="search-btn" onClick={()=>(sortReviewBy(sortBy))}><i className="fas fa-sort"></i></button>
-                    </div>
                     <button className="btn btn-secondary">Schedule Upload</button>
                 </div>
             </div>
@@ -125,18 +142,14 @@ function ReviewApp() {
                 <table className="review-table">
                     <thead>
                         <tr>
-                            <th>Project Name</th>
-                            <th>Review Request</th>
-                            <th>Contractor Submission Date</th>
-                            <th>Owner</th>
-                            <th>Review Completion Date</th>
+                            {tableHeaderList.map((e, i) => (<th key={`${i}th-table-header`}>{e.name} <i className="fas fa-sort" onClick={()=>(mySort(e.property))}></i></th>))}
                             <th>Status</th>
                             <th>Verification</th>
                             <th>Review Report</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {pendingReview.map((e, i)=>(
+                        {pendingReview.map((e, i) => (
                             <tr key={i}>
                                 <td>{e.projectName}</td>
                                 <td>{e.reviewRequest}</td>
