@@ -4,7 +4,7 @@
 #review-section h2 { font-weight: 600; margin-top: 0; }
 .filter-buttons .btn { 
     background: transparent;
-    border: 1px solid #ccc;
+    border: 1px solid var(--light-gray);
     color: var(--text-muted);
     width: 9vw;
 }
@@ -15,21 +15,21 @@
     color: var(--text-light);
 } */
 
-.filter-btn.active { background-color: var(--secondary-color); color: var(--text-light); border-color: var(--secondary-color); }
+.filter-btn.active { background-color: var(--primary-color); color: var(--text-light); border-color: var(--secondary-color); }
 
 .filter-btn.active.status-approved {
-    background-color: #d4edda; /* Light green for approved status */
-    color: #155724; /* Dark green text */
+    background-color: var(--green-status-bg); /* Light green for approved status */
+    color: var(--green-status-text)
 }
 
 .filter-btn.active.status-pending {
-    background-color: #fff3cd; /* Light yellow for pending status */
-    color: #856404; /* Dark yellow text */
+    background-color: var(--yellow-status-bg); /* Light yellow for pending status */
+    color: var(--yellow-status-text); /* Dark yellow text */
 }
 
 .filter-btn.active.status-rejected {
-    background-color: #f8d7da; /* Light red for rejected status */
-    color: #721c24; /* Dark red text */
+    background-color: var(--red-status-bg); /* Light red for rejected status */
+    color: var(--red-status-text); /* Dark red text */
 }
 
 .review-actions { 
@@ -43,9 +43,9 @@
 .review-table th, .review-table td { padding: 1rem; border-bottom: 1px solid #eee; vertical-align: middle; }
 .review-table th { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; color: var(--text-muted); }
 .status-tag { padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600; color: var(--text-dark); text-align: center; }
-.status-tag.status-Approved { background-color: #d4edda; color: #155724; }
-.status-tag.status-Pending { background-color: #fff3cd; color: #856404; }
-.status-tag.status-Rejected { background-color: #f8d7da; color: #721c24; }
+.status-tag.status-Approved { background-color: var(--green-status-bg); color: var(--green-status-text); }
+.status-tag.status-Pending { background-color: var(--yellow-status-bg); color: var(--yellow-status-text); }
+.status-tag.status-Rejected { background-color: var(--red-status-bg); color: var(--red-status-text); }
 .ai-highlight { color: var(--accent-color-alt); font-size: 1.2rem; }
 .btn-link { color: var(--primary-color); text-decoration: none; font-weight: 500; }
 .pagination { display: flex; justify-content: flex-end; margin-top: 1.5rem; }

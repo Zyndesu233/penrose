@@ -44,9 +44,7 @@ function ProjectApp() {
                         <input type="text" placeholder="Search Projects..." className="search-box" value={searchProjectKeywords} onChange={(e)=>(setsearchProjectKeywords(e.target.value))} />
                         <button className="search-btn" onClick={()=>(searchProject(searchProjectKeywords))}><i className="fas fa-search"></i></button>
                     </div>
-                    <div className="add-project-button">
-                        <button className="btn btn-primary">Add Project</button>
-                    </div>
+                    <button className="btn btn-1">Add Project</button>
                 </div>
                 <div className="filter-buttons">
                     <button className={filterStatus==="all"? "btn filter-btn active no-status": "btn filter-btn"} onClick={initializeProject}>All</button>

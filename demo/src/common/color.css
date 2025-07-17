@@ -10,11 +10,23 @@
   --text-muted: #6c757d;
   --btn-hover-orange: #e06f0f; /*Darker orange Hover underline color for buttons */
   --light-gray: #adb5bd;
-  --green-status-bg: #28a745;
-  --yellow-status-bg: #ffc107;
-  --red-status-bg: #dc3545;
+  --green-status-text: #155724;
+  --yellow-status-text: #856404;
+  --red-status-text: #721c24;
+  --green-status-bg: #d4edda;
+  --yellow-status-bg: #fff3cd;
+  --red-status-bg: #f8d7da;
   --font-family: 'Montserrat', sans-serif;
   --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
   --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
   --border-radius: 6px;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
 }

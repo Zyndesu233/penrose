@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderApp from "../common/headerApp";
-import ReviewApp from "./reviewApp.jsx";
+import HeaderApp from "../common/headerApp.jsx";
+import ProgramApp from "./programApp.jsx";
 
-const dashboardNavList = [{
+const programReviewNavList = [{
   name: "Dashboard",
   link: "../page/dashboard.html"
 },
@@ -13,7 +13,7 @@ const dashboardNavList = [{
 },
 {
   name: "Program",
-  link: "../page/programReview.html"
+  link: "#"
 },
 {
   name: "Schedule",
@@ -24,14 +24,15 @@ const dashboardNavList = [{
   link: "#"
 }];
 
+
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
-    <HeaderApp list={dashboardNavList}/>
+    <HeaderApp list={programReviewNavList}/>
   </React.StrictMode>
 );
 
-ReactDOM.createRoot(document.getElementById("review-section")).render(
+ReactDOM.createRoot(document.getElementById("main-container")).render(
   <React.StrictMode>
-    <ReviewApp />
+    <ProgramApp />
   </React.StrictMode>
 );

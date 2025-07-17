@@ -13,7 +13,7 @@ const projectReviewNavList = [{
 },
 {
   name: "Program",
-  link: "#"
+  link: "../page/programReview.html"
 },
 {
   name: "Schedule",
