@@ -11,7 +11,7 @@ function HeaderApp({list}) {
             </div>
             <nav>
                 <ul>
-                    {list.map((e, i) => <li><a href={e.link} key={i}>{e.name}</a></li>)}
+                    {list.map((e, i) => <li key={`${i}-th header item`}><a href={e.link}>{e.name}</a></li>)}
                 </ul>
             </nav>
             <div className="header-actions">

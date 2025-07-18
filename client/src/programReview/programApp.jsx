@@ -1,33 +1,43 @@
 import React, { useEffect, useState } from "react";
 import "./programApp.css"
-import programs from "./programList.json"
+import axios from "axios";
 
 function ProgramApp() {
-    const [programList, setProgramList] = useState(programs);
+    const [fetchedPrograms, setFetchedPrograms] = useState([]);
+    const [programList, setProgramList] = useState([]);
     const [filterStatus, setFilterStatus] = useState("all");
     const [searchProgramKeywords, setsearchProgramKeywords] = useState("");
 
-    /* for later api use
-    useEffect(()=>{
-        fetch(API)
-        .then((Response) => (Response.json()))
-        .then((Data) => (setProgramList(Data)));
-    }, []); 
-    */
+    // Calling API
+    const fetchProgramList = async () => {
+        try {
+            const response = await axios.get("http://localhost:8080/programList");
+            setFetchedPrograms(response.data);
+            setProgramList(response.data);
+        } catch(error) {
+            console.log(error.response);
+            return error.response;
+        }
+    }
 
+    useEffect(() => {
+        fetchProgramList();
+    }, []);
+
+    // Filter function
     function filterProgram(statusTarget) {
-        let tempProgramList = [...programs].filter((e)=>(e.status===statusTarget));
+        let tempProgramList = [...fetchedPrograms].filter((e)=>(e.status===statusTarget));
         setProgramList(tempProgramList);
         setFilterStatus(statusTarget);
     }
 
     function initializeProgram() {
-        setProgramList(programs);
+        setProgramList(fetchedPrograms);
         setFilterStatus("all");
     }
 
     function searchProgram(keywords) {
-        let tempProgramList = [...programs].filter((e)=>(e.title.includes(keywords)));
+        let tempProgramList = [...fetchedPrograms].filter((e)=>(e.title.includes(keywords)));
         setProgramList(tempProgramList);
     }
 
