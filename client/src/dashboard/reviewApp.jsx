@@ -124,7 +124,7 @@ function ReviewApp() {
             <h2>Pending Review</h2>
             <div className="review-controls">
                 <div className="filter-buttons">
-                    <button className={filterStatus==="All"? "btn filter-btn active": "btn filter-btn"} onClick={initializeProject}>All</button>
+                    <button className={filterStatus==="All"? "btn filter-btn active no-status": "btn filter-btn"} onClick={initializeProject}>All</button>
                     <button className={filterStatus==="Approved"? "btn filter-btn active status-approved": "btn filter-btn"} onClick={()=>(filterReview("Approved"))}>Approved</button>
                     <button className={filterStatus==="Pending"? "btn filter-btn active status-pending": "btn filter-btn"} onClick={()=>(filterReview("Pending"))}>Pending</button>
                     <button className={filterStatus==="Rejected"? "btn filter-btn active status-rejected": "btn filter-btn"} onClick={()=>(filterReview("Rejected"))}>Rejected</button>
@@ -134,7 +134,7 @@ function ReviewApp() {
                         <input type="text" placeholder="Search..." className="search-box" value={searchReviewKeywords} onChange={(e)=>(setSearchReviewKeywords(e.target.value))} />
                         <button className="search-btn" onClick={()=>(searchReview(searchReviewKeywords))}><i className="fas fa-search"></i></button>
                     </div>
-                    <button className="btn btn-secondary">Schedule Upload</button>
+                    <button className="btn btn-2">Schedule Upload</button>
                 </div>
             </div>
 
