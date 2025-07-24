@@ -3,7 +3,6 @@
 
 /* main content margin */
 .main-content {
-    /* padding: 80px 2rem 2rem; */
     margin-left: 50px;
     margin-right: 50px;
     box-sizing: border-box;
@@ -100,6 +99,7 @@
     font-size: 0.9rem; 
     font-weight: 500; 
 }
+
 .view-toggle .toggle-btn:first-child {
     border-top-left-radius: var(--border-radius); 
     border-bottom-left-radius: var(--border-radius); 
@@ -120,6 +120,7 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
     gap: 1.5rem; 
 }
+
 .card { 
     background: var(--text-light); 
     border-radius: var(--border-radius); 
@@ -144,9 +145,9 @@
     color: var(--text-muted); 
     font-size: 0.9rem; 
 }
-.show-all-container { 
-    text-align: center; 
-    margin-top: 2rem; 
+.show-all-container {
+    text-align: center;
+    margin-top: 2rem;
 }
 
 /* --- Skeleton Loader Animation --- */
@@ -163,14 +164,16 @@
     border-radius: var(--border-radius); 
     margin-bottom: 1rem; 
 }
-.skeleton-text { 
-    height: 1rem; 
-    margin-bottom: 0.5rem; 
-    border-radius: 4px; 
+.skeleton-text {
+    height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
 }
+
 .skeleton-text.short { 
     width: 60%; 
 }
+
 @keyframes shimmer { 
     0% { background-position: 200% 0; } 
     100% { background-position: -200% 0; } 

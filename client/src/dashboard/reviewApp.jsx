@@ -12,7 +12,7 @@ function ReviewApp() {
             property: "reviewRequest"
         },
         {
-            name: "Contractor Submission Date",
+            name: "Submission Date",
             property: "contractorSubmissionDate"
         },
         {
@@ -20,7 +20,7 @@ function ReviewApp() {
             property: "owner"
         },
         {
-            name: "Review Completion Date",
+            name: "Review Date",
             property: "reviewCompletionDate"
         }
     ];
@@ -144,7 +144,7 @@ function ReviewApp() {
                         <tr>
                             {tableHeaderList.map((e, i) => (<th key={`${i}th-table-header`}>{e.name} <i className="fas fa-sort" onClick={()=>(mySort(e.property))}></i></th>))}
                             <th>Status</th>
-                            <th>Verification</th>
+                            <th>Verif.</th>
                             <th>Review Report</th>
                         </tr>
                     </thead>

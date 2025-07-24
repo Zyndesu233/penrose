@@ -6,39 +6,6 @@
     font-weight: 600; 
     margin-top: 0; 
 }
-/* .filter-buttons .btn { 
-    background: transparent;
-    border: 1px solid var(--light-gray);
-    color: var(--text-muted);
-    width: 9vw;
-} */
-
-/* later decide if we want to set color for no status */
-/* .filter-btn.active.no-status {
-    background-color: var(--primary-color);
-    color: var(--text-light);
-} */
-
-/* .filter-btn.active { 
-    background-color: var(--primary-color); 
-    color: var(--text-light); 
-    border-color: var(--secondary-color); 
-}
-
-.filter-btn.active.status-approved {
-    background-color: var(--green-status-bg);
-    color: var(--green-status-text);
-}
-
-.filter-btn.active.status-pending {
-    background-color: var(--yellow-status-bg); 
-    color: var(--yellow-status-text);
-}
-
-.filter-btn.active.status-rejected {
-    background-color: var(--red-status-bg); 
-    color: var(--red-status-text); 
-} */
 
 .filter-buttons {
     display: flex;

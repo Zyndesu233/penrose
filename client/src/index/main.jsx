@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderApp from "./common/headerApp";
+import HeaderApp from "../common/headerApp";
 
 const frontPageNavList = [{
   name: "Home",
