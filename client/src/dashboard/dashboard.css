@@ -89,6 +89,10 @@
     gap: 1rem;
 }
 
+.review-table th{
+    width: 20%;
+}
+
 /* --- View Toggle --- */
 .view-toggle .toggle-btn { 
     background: transparent; 
