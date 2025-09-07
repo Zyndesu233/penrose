@@ -24,9 +24,11 @@ const dashboardNavList = [{
   link: "#"
 }];
 
+const currentPage = "Dashboard";
+
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
-    <HeaderApp list={dashboardNavList}/>
+    <HeaderApp list={dashboardNavList} currentPage={currentPage} />
   </React.StrictMode>
 );
 

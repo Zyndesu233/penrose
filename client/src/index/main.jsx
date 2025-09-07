@@ -27,8 +27,10 @@ const frontPageNavList = [{
   link: "./page/dashboard.html"
 }];
 
+const currentPage = "Home";
+
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
-    <HeaderApp list={frontPageNavList}/>
+    <HeaderApp list={frontPageNavList} currentPage={currentPage} />
   </React.StrictMode>
 );

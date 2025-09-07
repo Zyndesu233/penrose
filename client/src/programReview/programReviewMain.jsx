@@ -24,10 +24,11 @@ const programReviewNavList = [{
   link: "#"
 }];
 
+const currentPage = "Program";
 
 ReactDOM.createRoot(document.getElementById("main-header")).render(
   <React.StrictMode>
-    <HeaderApp list={programReviewNavList}/>
+    <HeaderApp list={programReviewNavList} currentPage={currentPage} />
   </React.StrictMode>
 );
 

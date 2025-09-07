@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./headerApp.css";
 
-function HeaderApp({ list }) {
+function HeaderApp({ list, currentPage }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [activeLink, setActiveLink] = useState("Home"); // Default to Home
-
-    useEffect(() => {
-        const currentPath = window.location.pathname;
-        const hash = window.location.hash;
-
-        // Find a non-hash link that matches the current path
-        const activePage = list.find(item => !item.link.startsWith('#') && currentPath.includes(item.link) && item.link !== "./page/dashboard.html");
-
-        if (activePage) {
-            setActiveLink(activePage.name);
-        } else if (currentPath.endsWith('/') || currentPath.endsWith('index.html') || currentPath.endsWith('dashboard.html')) {
-            // We are on the home page, check for hash
-            const activeHash = list.find(item => item.link === hash);
-            if (activeHash) {
-                setActiveLink(activeHash.name);
-            } else {
-                setActiveLink("Home"); // Default for home page
-            }
-        }
-    }, [list]);
-
+    const [activeLink, setActiveLink] = useState(currentPage);
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
