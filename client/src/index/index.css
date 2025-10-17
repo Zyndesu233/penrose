@@ -1,9 +1,98 @@
-@import url(../common/color.css);
-@import url(../common/btn.css);
+/* @import url(../common/color.css); */
+/* @import url(../common/btn.css); */
 
 /* --- Global Styles & Variables --- */
+:root {
+  --primary-color: #0A2463; /* Deep Blue */
+  --secondary-color: #2F2F2F; /* Industrial Gray */
+  --accent-color: #FF7F11; /* Safety Orange */
+  --accent-color-alt: #00C4CC; /* AI Teal for specific highlights if needed */
+  --background-light: #F8F9FA; /* Off-White */
+  --background-dark: #3E6680; /* Steel Gray - can be used for darker sections */
+  --text-light: #FFFFFF;
+  --text-dark: #333333;
+  --text-muted: #6c757d;
+  --btn-hover-orange: #e06f0f; /*Darker orange Hover underline color for buttons */
+  --light-gray: #adb5bd;
+  --green-status-text: #155724;
+  --yellow-status-text: #856404;
+  --red-status-text: #721c24;
+  --green-status-bg: #d4edda;
+  --yellow-status-bg: #fff3cd;
+  --red-status-bg: #f8d7da;
+  --font-family: 'Montserrat', sans-serif;
+  --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --border-radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* btn */
+/* btn common property */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+/* oragne btn (btn-primary)*/
+.btn-1 {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.btn-1:hover {
+  background-color: var(--btn-hover-orange);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/*colorless and when hovered dark blue btn (btn-secondary)*/
+.btn-2 {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-2:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border: 2px solid var(--primary-color);
+}
+
+/* typical sizes for btn */
+.btn-small {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+.btn-large {
+  padding: 15px 35px;
+  font-size: 1.1rem;
 }
 
 .container {
