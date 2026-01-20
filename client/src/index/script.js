@@ -148,4 +148,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Example: .btn:active { transform: scale(0.98); }
     // No specific JS needed for simple cases based on current design.
 
-});
+});        document.addEventListener('DOMContentLoaded', () => {
+            const trailLength = 40;  // Long snake
+            const baseSize = 100;    // Big head
+            const circles = [];
+            const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+            for (let i = 0; i < trailLength; i++) {
+                const div = document.createElement('div');
+                div.classList.add('trail-circle');
+                
+                // Size logic
+                const scale = 1 - (i / trailLength); 
+                const size = baseSize * scale;
+                div.style.width = `${size}px`;
+                div.style.height = `${size}px`;
+                
+                // Color Logic: Deep Blue -> Purple -> Pink (Visible on White)
+                // HSL: 240 is Blue, 300 is Purple/Pink
+                const hue = 220 + (i * 3); 
+                div.style.background = `radial-gradient(circle, hsla(${hue}, 80%, 50%, 0.8) 0%, rgba(255,255,255,0) 70%)`;
+                
+                div.x = mouse.x;
+                div.y = mouse.y;
+                document.body.appendChild(div);
+                circles.push(div);
+            }
+
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+
+            function animate() {
+                let targetX = mouse.x;
+                let targetY = mouse.y;
+
+                circles.forEach((circle, index) => {
+                    // "Lagging" Physics
+                    circle.x += (targetX - circle.x) * 0.25;
+                    circle.y += (targetY - circle.y) * 0.25;
+
+                    circle.style.transform = `translate(${circle.x}px, ${circle.y}px) translate(-50%, -50%)`;
+
+                    targetX = circle.x;
+                    targetY = circle.y;
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        });
