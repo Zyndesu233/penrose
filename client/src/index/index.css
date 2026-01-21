@@ -406,6 +406,7 @@ img {
 .testimonial-carousel {
   position: relative;
   max-width: 800px;
+  /* min-height: 320px; */
   margin: 0 auto;
   overflow: hidden; /* Important for slide effect */
   background-color: var(--text-light);
@@ -418,6 +419,7 @@ img {
   justify-content: center;
 }
 .testimonial-slide {
+  min-height: 200px;
   display: none; /* Hidden by default */
   text-align: center;
   animation: fadeEffect 1.5s; /* Simple fade for now */
