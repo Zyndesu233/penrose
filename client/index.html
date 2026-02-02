@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penrose - AI-Powered Construction Scheduling</title>
     <link rel="stylesheet" href="./src/index/index.css">
+    <link rel="stylesheet" href="./src/index/intro-anime.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/Logo square.png">
 </head>
@@ -12,6 +13,7 @@
 
     <!-- logo link to home page url -->
     <header id="main-header"></header>
+    <div id="content-in-index">
 
     <div class="fixed-background"></div>
 
@@ -180,7 +182,33 @@
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
     </div>
-    
+    </div> <!-- End of content-in-index -->
+
+    <div id="pref-toast">
+        <div class="toast-header">
+            <span class="toast-title">Intro Settings</span>
+            <button class="toast-close" onclick="hideToast()">&times;</button>
+        </div>
+        <p style="font-size: 0.8rem; line-height: 1.5;">
+            Did you know? You can <strong>Double Click</strong> during the intro to skip it instantly.
+        </p>
+        <div class="toast-actions">
+            <button class="btn-disable" id="btn-stop-anim">
+                Disable intro on next visit
+            </button>
+            <label class="chk-label">
+                <input type="checkbox" id="chk-no-toast"> Don't show this tip again
+            </label>
+        </div>
+    </div>
+
+    <div id="intro-overlay">
+        <div class="msg-container">
+            <h1 class="primary-msg">Real time progress in <br /><span class="keyword">one dashboard</span></h1>
+            <h2 class="secondary-msg">Unleash Total Visibility Across Every Build</h2>
+        </div>
+        <div class="skip-hint">Double click to skip</div>
+    </div>
 
     <footer id="main-footer" class="content-row lazy-load">
         <div class="container">
@@ -229,6 +257,8 @@
     </footer>
 
     <script src="./src/index/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="./src/index/intro-anime.js"></script>
     <script type="module" src="./src/index/main.jsx"></script>
 </body>
 </html>

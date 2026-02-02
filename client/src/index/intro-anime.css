@@ -1,0 +1,156 @@
+/* --- BASE STYLES --- */
+:root {
+  --primary-color: #0A2463; /* Deep Blue */
+  --secondary-color: #2F2F2F; /* Industrial Gray */
+  --accent-color: #FF7F11; /* Safety Orange */
+  --accent-color-alt: #00C4CC; /* AI Teal for specific highlights if needed */
+  --background-light: #F8F9FA; /* Off-White */
+  --background-dark: #3E6680; /* Steel Gray - can be used for darker sections */
+  --text-light: #FFFFFF;
+  --text-dark: #333333;
+  --text-muted: #6c757d;
+  --btn-hover-orange: #e06f0f; /*Darker orange Hover underline color for buttons */
+  --light-gray: #adb5bd;
+  --green-status-text: #155724;
+  --yellow-status-text: #856404;
+  --red-status-text: #721c24;
+  --green-status-bg: #d4edda;
+  --yellow-status-bg: #fff3cd;
+  --red-status-bg: #f8d7da;
+  --font-family: 'Montserrat', sans-serif;
+  --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --border-radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  z-index: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+        /* --- INTRO OVERLAY --- */
+        #intro-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #0f172a;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            perspective: 1000px; 
+        }
+
+        .skip-hint {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.4;
+            color: #94a3b8;
+        }
+
+        /* --- PERSISTENT NOTIFICATION (Top Right) --- */
+        /* Note: z-index is 50 to sit above dashboard but below intro overlay (if overlay was active) */
+        #pref-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background: #ffffff; /* White background for dashboard contrast */
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 50; 
+            font-size: 0.85rem;
+            color: #475569;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            
+            /* Hidden State */
+            transform: translateX(120%);
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        #pref-toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .toast-title { font-weight: 700; color: #1e293b; font-size: 0.95rem; }
+        .toast-close { 
+            background: none; border: none; color: #94a3b8; 
+            cursor: pointer; font-size: 1.4rem; line-height: 0.6;
+        }
+        .toast-close:hover { color: #334155; }
+
+        .toast-actions {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+        }
+
+        .btn-disable {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: background 0.2s;
+            text-align: center;
+        }
+        .btn-disable:hover { background: #334155; }
+
+        .chk-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #64748b;
+            cursor: pointer;
+        }
+
+        /* --- TEXT STYLING --- */
+        .msg-container { text-align: center; padding: 0 20px; }
+        .intro-overlay h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; display:block; width:100%; }
+        .intro-overlay h2 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: #94a3b8; letter-spacing: 0.05em; margin-top: 1rem; }
+        .intro-overlay .word { display: inline-block; white-space: nowrap; }
+        .intro-overlay .letter { display: inline-block; transform-origin: 50% 100%; transform-style: preserve-3d; backface-visibility: hidden; }
+        .intro-overlay .keyword .letter {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+        }
