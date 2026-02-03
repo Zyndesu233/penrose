@@ -31,11 +31,11 @@ body {
   font-family: var(--font-family);
   line-height: 1.6;
   color: var(--text-dark);
-  background-color: var(--background-light);
+  /* background-color: var(--background-light); */
   overflow-x: hidden; /* Prevent horizontal scroll */
   margin: 0;
   padding: 0;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   z-index: 0;
 }
 
@@ -142,11 +142,11 @@ html {
 
         /* --- TEXT STYLING --- */
         .msg-container { text-align: center; padding: 0 20px; }
-        .intro-overlay h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; display:block; width:100%; }
-        .intro-overlay h2 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: #94a3b8; letter-spacing: 0.05em; margin-top: 1rem; }
-        .intro-overlay .word { display: inline-block; white-space: nowrap; }
-        .intro-overlay .letter { display: inline-block; transform-origin: 50% 100%; transform-style: preserve-3d; backface-visibility: hidden; }
-        .intro-overlay .keyword .letter {
+        .msg-container h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; display:block; width:100%; }
+        .msg-container h2 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: #94a3b8; letter-spacing: 0.05em; margin-top: 1rem; }
+        .msg-container .word { display: inline-block; white-space: nowrap; }
+        .msg-container .letter { display: inline-block; transform-origin: 50% 100%; transform-style: preserve-3d; backface-visibility: hidden; }
+        .msg-container .keyword .letter {
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             -webkit-background-clip: text;
             background-clip: text;
