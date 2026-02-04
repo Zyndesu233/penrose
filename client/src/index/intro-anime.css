@@ -71,7 +71,7 @@ html {
         /* Note: z-index is 50 to sit above dashboard but below intro overlay (if overlay was active) */
         #pref-toast {
             position: fixed;
-            top: 20px;
+            top: 90px;
             right: 20px;
             width: 300px;
             background: #ffffff; /* White background for dashboard contrast */
