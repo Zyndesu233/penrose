@@ -194,7 +194,7 @@ h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--secondary-color); }
 
 p {
   margin-bottom: 1rem;
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
 }
 
 .section-subtitle {
@@ -233,7 +233,7 @@ img {
 }
 
 .content-row:nth-child(even) {
-  background-color: var(--text-light); /* Slightly different for visual separation */
+  background-color: rgba(248, 249, 250, 0.5); /* Semi-transparent off-white */
 }
 /* First row (hero) is always visible, no lazy load needed */
 #hero.content-row {
@@ -250,9 +250,9 @@ img {
 
 /* --- Row 1: Hero Section --- */
 .hero-section {
-  background-color: var(--background-light); /* Light background */
-  background-blend-mode: overlay;
-  color: var(--text-light);
+  /* background-color: var(--background-light); */
+  /* background-blend-mode: overlay; */
+  /* color: var(--text-light); */
   min-height: calc(100vh - 80px); /* Adjust 80px based on header height */
   display: flex;
   align-items: center;
