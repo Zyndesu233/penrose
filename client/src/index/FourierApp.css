@@ -1,0 +1,230 @@
+:root {
+    --bg-color: #08080c;
+    --text-main: #ffffff;
+    --text-muted: #8b9bb4;
+    --accent-chaos: #ff3b3b;
+    --accent-order: #00f2ff;
+    --glass-border: rgba(255, 255, 255, 0.15);
+}
+
+#fourier{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #08080c;
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* local tokens (kept inside the section) */
+  --bg-color: #08080c;
+  --text-main: #ffffff;
+  --text-muted: #8b9bb4;
+  --accent-chaos: #ff3b3b;
+  --accent-order: #00f2ff;
+  --glass-border: rgba(255, 255, 255, 0.15);
+
+  /* ensures z-index is contained within this component */
+  isolation: isolate;
+}
+
+/* avoid layout surprises if host page has aggressive global rules */
+#fourier, 
+#fourier * { box-sizing: border-box; }
+
+#fourier .div2-container{
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+  padding: 0 16px;
+}
+
+#fourier .main-headline{
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  font-weight: 800;
+  margin: 0 0 20px 0;
+  background: linear-gradient(180deg, #fff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+#fourier .sub-headline{
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0;
+}
+
+/* stage is the “bottom half” area */
+#fourier .div2-stage{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* canvas fits the stage (not the window) */
+#fourier canvas{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* center logo */
+#fourier .div2-logo-container{
+  position: relative;
+  z-index: 20;
+  width: 150px;
+  height: 150px;
+  background: rgba(16, 16, 24, 0.6);
+  border: 2px solid var(--glass-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+#fourier .div2-logo-wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#fourier .img-div2{
+  width: 60%;
+  height: auto;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 45%; /* your offset */
+  transform: translate(-50%, -50%);
+}
+
+/* labels */
+#fourier .labels-container{
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 30;
+  pointer-events: none;
+}
+
+#fourier .label-box{
+  opacity: 0;
+  pointer-events: auto;
+  width: min(350px, 42vw);
+  display: flex;
+  flex-direction: column;
+}
+
+#fourier .label-box.left{
+  align-items: flex-end;
+  text-align: right;
+  margin-right: 100px;
+}
+#fourier .label-box.right{
+  align-items: flex-start;
+  text-align: left;
+  margin-left: 100px;
+}
+
+#fourier .label-header{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: color 0.3s;
+}
+
+#fourier .label-header:hover .label-title{
+  color: #fff;
+  text-shadow: 0 0 8px currentColor;
+}
+
+#fourier .label-title{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+#fourier .caret{
+  font-size: 1rem;
+  margin: 0 10px;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+#fourier .text-chaos{ color: var(--accent-chaos); }
+#fourier .text-order{ color: var(--accent-order); }
+
+/* description box */
+#fourier .label-content{
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 10px;
+  position: relative;
+}
+
+#fourier .label-content::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 6, 10, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, black 50%, transparent 100%);
+  z-index: -1;
+  border-radius: 16px;
+}
+
+#fourier .content-inner{
+  position: relative;
+  padding: 25px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  z-index: 1;
+}
+
+/* vignette overlay */
+#fourier .vignette{
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, transparent 50%, var(--bg-color) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* responsive spacing */
+@media (max-width: 900px){
+  #fourier .label-box.left{ margin-right: 24px; }
+  #fourier .label-box.right{ margin-left: 24px; }
+  #fourier .label-title{ font-size: 1.05rem; }
+  #fourier .content-inner{ font-size: 1rem; padding: 18px; }
+}

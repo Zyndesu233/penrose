@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penrose - AI-Powered Construction Scheduling</title>
     <link rel="stylesheet" href="./src/index/index.css">
     <link rel="stylesheet" href="./src/index/intro-anime.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/index/FourierApp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="icon" href="./img/Logo square.png">
 </head>
+
 <body>
 
     <!-- logo link to home page url -->
@@ -18,170 +22,246 @@
 
 
 
-    <div id="hero-adjusted"></div>
-    <section id="hero" class="hero-section content-row">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Revolutionize Construction Scheduling with AI.</h1>
-                <p class="subtext">Streamline your construction project scheduling with AI-powered automation—save time, reduce delays, and stay on budget.</p>
+        <div id="hero-adjusted"></div>
+        <section id="hero" class="hero-section content-row">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Revolutionize Construction Scheduling with AI.</h1>
+                    <p class="subtext">Streamline your construction project scheduling with AI-powered automation—save
+                        time, reduce delays, and stay on budget.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-1">Get Started</a>
+                        <a href="#" class="btn btn-2">Try Free Demo</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="../img/dashboard ui.png" alt="AI-Powered Scheduling UI">
+                </div>
+            </div>
+        </section>
+
+
+        <div id="product-intro-adjusted"></div>
+        <section id="product-intro" class="content-row lazy-load">
+            <div class="container">
+                <h2>How Our AI Optimizes Your Schedule</h2>
+                <p class="section-subtitle">Our intelligent platform simplifies complex scheduling tasks with a clear,
+                    iterative process.</p>
+                <div class="workflow-diagram">
+                    <div class="workflow-step">
+                        <div class="step-icon"><span>1</span></div>
+                        <h3>Prepare</h3>
+                        <p>Input project data and constraints.</p>
+                    </div>
+                    <div class="workflow-arrow">&rarr;</div>
+                    <div class="workflow-step">
+                        <div class="step-icon"><span>2</span></div>
+                        <h3>Update</h3>
+                        <p>AI processes and generates initial schedule.</p>
+                    </div>
+                    <div class="workflow-arrow">&rarr;</div>
+                    <div class="workflow-step">
+                        <div class="step-icon"><span>3</span></div>
+                        <h3>Analyze</h3>
+                        <p>Identify potential risks and bottlenecks.</p>
+                    </div>
+                    <div class="workflow-arrow">&rarr;</div>
+                    <div class="workflow-step">
+                        <div class="step-icon"><span>4</span></div>
+                        <h3>Mitigate</h3>
+                        <p>Suggest optimized paths and resource allocation.</p>
+                    </div>
+                    <div class="workflow-arrow">&rarr;</div>
+                    <div class="workflow-step">
+                        <div class="step-icon"><span>5</span></div>
+                        <h3>Approve</h3>
+                        <p>Finalize and sync schedule with your team.</p>
+                    </div>
+                </div>
+                <div class="features-highlight">
+                    <h3>Core AI-Powered Features:</h3>
+                    <ul>
+                        <li><span class="feature-icon">&#10004;</span> Auto-Scheduling & Optimization</li>
+                        <li><span class="feature-icon">&#10004;</span> Predictive Risk Analysis</li>
+                        <li><span class="feature-icon">&#10004;</span> Real-time Team Synchronization</li>
+                        <li><span class="feature-icon">&#10004;</span> Resource Management & Allocation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="fourier">
+            <div class="div2-container">
+                <h1 class="main-headline">Turn Complexity into Clarity.</h1>
+                <p class="sub-headline">
+                    From raw, chaotic signals to clear actionable intelligence.
+                    We process the noise so you can focus on the performance.
+                </p>
+            </div>
+
+            <div class="div2-stage">
+                <canvas id="div2-waveCanvas"></canvas>
+
+                <div class="div2-logo-container" id="div2-appLogo">
+                    <div class="div2-logo-wrapper">
+                        <img src="img/Logo square.png" class="img-div2" alt="Penrose">
+                    </div>
+                </div>
+
+                <div class="labels-container">
+
+                    <div class="label-box left">
+                        <div class="label-header" onclick="toggleDetails()">
+                            <span class="caret">▶</span>
+                            <span class="label-title text-chaos">Raw Signal</span>
+                        </div>
+                        <div class="label-content">
+                            <div class="content-inner">
+                                <p><strong>Unfiltered Complexity</strong></p>
+                                Our system ingests raw project data, identifying hidden bottlenecks and chaotic
+                                dependencies before they impact your timeline.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="label-box right">
+                        <div class="label-header" onclick="toggleDetails()">
+                            <span class="caret">▶</span>
+                            <span class="label-title text-order">Analyzed Data</span>
+                        </div>
+                        <div class="label-content">
+                            <div class="content-inner">
+                                <p><strong>Actionable Insights</strong></p>
+                                We convert noise into structured strategies. Gain total visibility into performance
+                                metrics with predicted outcomes.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="vignette"></div>
+        </section>
+
+        <div id="company-intro-adjusted"></div>
+        <section id="company-intro" class="content-row lazy-load">
+            <div class="container">
+                <h2>Building the Future of Construction Management</h2>
+                <p class="section-subtitle">We are committed to innovation and efficiency in the construction industry.
+                </p>
+                <div class="vmv-grid">
+                    <div class="vmv-item">
+                        <h3>Our Vision</h3>
+                        <p>To be the leading AI solution that transforms how construction projects are planned and
+                            executed globally, making them more predictable, efficient, and sustainable.</p>
+                    </div>
+                    <div class="vmv-item">
+                        <h3>Our Mission</h3>
+                        <p>To empower construction professionals with intelligent tools that automate complex
+                            scheduling, mitigate risks, and enhance collaboration, ultimately delivering projects on
+                            time and within budget.</p>
+                    </div>
+                    <div class="vmv-item">
+                        <h3>Our Values</h3>
+                        <p>Innovation, Reliability, Customer-Centricity, Efficiency, and Integrity. We strive to embody
+                            these principles in our product and our partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="testimonials-adjusted"></div>
+        <section id="testimonials" class="content-row lazy-load">
+            <div class="container">
+                <h2>Trusted by Industry Leaders</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-slide active">
+                        <p>"You’re speaking my language. Everyone talks AI but few “get” it. I want this to unlock
+                            productivity gains, so I can be a more effective to my clients."</p>
+                        <h4>- Scheduling Lead, Michael Baker International</h4>
+                        <span><img src="./img/client-logo/michael_baker_logo.jpeg" alt="Michael Baker Logo"
+                                class="client-logo"></span>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"Our industry needed this decades ago. Count me in. Schedule reviews are not generating the
+                            full potential strategic value they could offer."</p>
+                        <h4>- Director of Project Controls, AECOM</h4>
+                        <span><img src="./img/client-logo/AECOM-logo.png" alt="AECOM Logo" class="client-logo"></span>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"Get us the MVP. I’ve explored other vendors but they scratch the surface. This frees up
+                            laborious prep work to focus my team’s time on data-backed PMing."</p>
+                        <h4>- Deputy Executive, Office of Program Management, Los Angeles County Metropolitan
+                            Transportation Authority</h4>
+                        <span><img src="./img/client-logo/LA-Metro-Logo.png" alt="LA Metro Logo"
+                                class="client-logo"></span>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"This is timely and critical. I want to see this. Our 2024 capital plan doubled YoY to $5B.
+                            Our 5-year pipeline is at $50B+. I need timely insights to get ahead of any schedule risks."
+                        </p>
+                        <h4>- Project Controls Manager, National Railroad Passenger Corporation (Amtrak)</h4>
+                        <span><img src="./img/client-logo/Amtrak_logo.svg.png" alt="Amtrak Logo"
+                                class="client-logo"></span>
+                    </div>
+                    <div class="testimonial-slide">
+                        <p>"This is a no-brainer with all the time, labor, and cost savings at stake for my teams.
+                            Current processes feel like a chore and my team is already overworked."</p>
+                        <h4>- Design-Build Manager, Kiewit Corporation</h4>
+                        <span><img src="./img/client-logo/Kiewit-116c-2.png" alt="Kiewit Corporation Logo"
+                                class="client-logo"></span>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta" class="content-row lazy-load">
+            <div class="container">
+                <h2>Ready to Build Smarter?</h2>
+                <p>Take control of your construction projects with the power of AI.</p>
                 <div class="cta-buttons">
-                    <a href="#" class="btn btn-1">Get Started</a>
-                    <a href="#" class="btn btn-2">Try Free Demo</a>
+                    <a href="#" class="btn btn-primary btn-large">Sign Up Now</a>
+                    <a href="#" class="btn btn-secondary btn-large">Request a Demo</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="../img/dashboard ui.png" alt="AI-Powered Scheduling UI">
-            </div>
-        </div>
-    </section>
-
-    <div id="product-intro-adjusted"></div>
-    <section id="product-intro" class="content-row lazy-load">
-        <div class="container">
-            <h2>How Our AI Optimizes Your Schedule</h2>
-            <p class="section-subtitle">Our intelligent platform simplifies complex scheduling tasks with a clear, iterative process.</p>
-            <div class="workflow-diagram">
-                <div class="workflow-step">
-                    <div class="step-icon"><span>1</span></div>
-                    <h3>Prepare</h3>
-                    <p>Input project data and constraints.</p>
-                </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-icon"><span>2</span></div>
-                    <h3>Update</h3>
-                    <p>AI processes and generates initial schedule.</p>
-                </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-icon"><span>3</span></div>
-                    <h3>Analyze</h3>
-                    <p>Identify potential risks and bottlenecks.</p>
-                </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-icon"><span>4</span></div>
-                    <h3>Mitigate</h3>
-                    <p>Suggest optimized paths and resource allocation.</p>
-                </div>
-                <div class="workflow-arrow">&rarr;</div>
-                <div class="workflow-step">
-                    <div class="step-icon"><span>5</span></div>
-                    <h3>Approve</h3>
-                    <p>Finalize and sync schedule with your team.</p>
-                </div>
-            </div>
-            <div class="features-highlight">
-                <h3>Core AI-Powered Features:</h3>
-                <ul>
-                    <li><span class="feature-icon">&#10004;</span> Auto-Scheduling & Optimization</li>
-                    <li><span class="feature-icon">&#10004;</span> Predictive Risk Analysis</li>
-                    <li><span class="feature-icon">&#10004;</span> Real-time Team Synchronization</li>
-                    <li><span class="feature-icon">&#10004;</span> Resource Management & Allocation</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <div id="company-intro-adjusted"></div>
-    <section id="company-intro" class="content-row lazy-load">
-        <div class="container">
-            <h2>Building the Future of Construction Management</h2>
-            <p class="section-subtitle">We are committed to innovation and efficiency in the construction industry.</p>
-            <div class="vmv-grid">
-                <div class="vmv-item">
-                    <h3>Our Vision</h3>
-                    <p>To be the leading AI solution that transforms how construction projects are planned and executed globally, making them more predictable, efficient, and sustainable.</p>
-                </div>
-                <div class="vmv-item">
-                    <h3>Our Mission</h3>
-                    <p>To empower construction professionals with intelligent tools that automate complex scheduling, mitigate risks, and enhance collaboration, ultimately delivering projects on time and within budget.</p>
-                </div>
-                <div class="vmv-item">
-                    <h3>Our Values</h3>
-                    <p>Innovation, Reliability, Customer-Centricity, Efficiency, and Integrity. We strive to embody these principles in our product and our partnerships.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="testimonials-adjusted"></div>
-    <section id="testimonials" class="content-row lazy-load">
-        <div class="container">
-            <h2>Trusted by Industry Leaders</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-slide active">
-                    <p>"You’re speaking my language. Everyone talks AI but few “get” it. I want this to unlock productivity gains, so I can be a more effective to my clients."</p>
-                    <h4>- Scheduling Lead, Michael Baker International</h4>
-                    <span><img src="./img/client-logo/michael_baker_logo.jpeg" alt="Michael Baker Logo" class="client-logo"></span>
-                </div>
-                <div class="testimonial-slide">
-                    <p>"Our industry needed this decades ago. Count me in. Schedule reviews are not generating the full potential strategic value they could offer."</p>
-                    <h4>- Director of Project Controls, AECOM</h4>
-                    <span><img src="./img/client-logo/AECOM-logo.png" alt="AECOM Logo" class="client-logo"></span>
-                </div>
-                <div class="testimonial-slide">
-                    <p>"Get us the MVP. I’ve explored other vendors but they scratch the surface. This frees up laborious prep work to focus my team’s time on data-backed PMing."</p>
-                    <h4>- Deputy Executive, Office of Program Management, Los Angeles County Metropolitan Transportation Authority</h4>
-                    <span><img src="./img/client-logo/LA-Metro-Logo.png" alt="LA Metro Logo" class="client-logo"></span>
-                </div>
-                <div class="testimonial-slide">
-                    <p>"This is timely and critical. I want to see this. Our 2024 capital plan doubled YoY to $5B. Our 5-year pipeline is at $50B+. I need timely insights to get ahead of any schedule risks."</p>
-                    <h4>- Project Controls Manager, National Railroad Passenger Corporation (Amtrak)</h4>
-                    <span><img src="./img/client-logo/Amtrak_logo.svg.png" alt="Amtrak Logo" class="client-logo"></span>
-                </div>
-                <div class="testimonial-slide">
-                    <p>"This is a no-brainer with all the time, labor, and cost savings at stake for my teams. Current processes feel like a chore and my team is already overworked."</p>
-                    <h4>- Design-Build Manager, Kiewit Corporation</h4>
-                    <span><img src="./img/client-logo/Kiewit-116c-2.png" alt="Kiewit Corporation Logo" class="client-logo"></span>
-                </div>
-                <div class="carousel-controls">
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="final-cta" class="content-row lazy-load">
-        <div class="container">
-            <h2>Ready to Build Smarter?</h2>
-            <p>Take control of your construction projects with the power of AI.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn btn-primary btn-large">Sign Up Now</a>
-                <a href="#" class="btn btn-secondary btn-large">Request a Demo</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
         <div class="card-deck">
-        <div class="card">
-            <div class="hero-content">
-                <h1>Revolutionize Construction Scheduling with AI.</h1>
-                <p class="subtext">Streamline your construction project scheduling with AI-powered automation—save time, reduce delays, and stay on budget.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-1">Get Started</a>
-                    <a href="#" class="btn btn-2">Try Free Demo</a>
+            <div class="card">
+                <div class="hero-content">
+                    <h1>Revolutionize Construction Scheduling with AI.</h1>
+                    <p class="subtext">Streamline your construction project scheduling with AI-powered automation—save
+                        time, reduce delays, and stay on budget.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-1">Get Started</a>
+                        <a href="#" class="btn btn-2">Try Free Demo</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="../img/dashboard ui.png" alt="AI-Powered Scheduling UI">
                 </div>
             </div>
-            <div class="hero-visual">
-                <img src="../img/dashboard ui.png" alt="AI-Powered Scheduling UI">
+
+            <div class="card">
+                <h2>Card 2</h2>
+                <p>Scroll down. Notice how the background grid stays fixed, and the snake moves freely behind it.</p>
+            </div>
+            <div class="card">
+                <h2>Card 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+            <div class="card">
+                <h2>Card 4</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.</p>
             </div>
         </div>
-
-        <div class="card">
-            <h2>Card 2</h2>
-            <p>Scroll down. Notice how the background grid stays fixed, and the snake moves freely behind it.</p>
-        </div>
-        <div class="card">
-            <h2>Card 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-        <div class="card">
-            <h2>Card 4</h2>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-    </div>
     </div> <!-- End of content-in-index -->
 
     <div id="pref-toast">
@@ -260,6 +340,8 @@
     <script src="./src/index/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="./src/index/intro-anime.js"></script>
+    <script src="./src/index/FourierApp.js"></script>
     <script type="module" src="./src/index/main.jsx"></script>
 </body>
+
 </html>
