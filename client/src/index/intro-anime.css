@@ -146,11 +146,32 @@ html {
         .msg-container h2 { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: #94a3b8; letter-spacing: 0.05em; margin-top: 1rem; }
         .msg-container .word { display: inline-block; white-space: nowrap; }
         .msg-container .letter { display: inline-block; transform-origin: 50% 100%; transform-style: preserve-3d; backface-visibility: hidden; }
-        .msg-container .keyword .letter {
+        /* .msg-container .keyword {
             background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             font-weight: 800;
             filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+        } */
+
+        .keyword-gradient {
+            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+        }
+
+        .msg-container.keyword .letter {
+            /* Inherits gradient via JS logic or explicit class */
+        }
+
+        #counter-span {
+            display: inline-block;
+            width: 1.3em; /* Fixed width to prevent jittering as numbers change */
+            text-align: right;
+            margin-right: 0.1em;
+            vertical-align: bottom; /* Align with text baseline */
         }

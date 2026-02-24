@@ -4,58 +4,47 @@ document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.querySelector('#intro-overlay');
             const landingPage = document.querySelector('#content-in-index');
             const toast = document.querySelector('#pref-toast');
+            const counterSpan = document.getElementById('counter-span');
             
             const PREF_SKIP_INTRO = 'pref_skip_intro';
             const PREF_HIDE_TOAST = 'pref_hide_toast';
 
             // --- 1. INITIALIZATION CHECK ---
-            
-            // If user previously clicked "Disable intro"
             if (localStorage.getItem(PREF_SKIP_INTRO) === 'true') {
                 overlay.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 landingPage.style.opacity = 1;
                 landingPage.style.transform = 'scale(1)';
-                return; // Exit script, no animation, no toast
+                return;
             }
 
             // --- 2. TOAST LOGIC ---
-
             function showToast() {
-                // Only show if user hasn't ticked "Don't show this again"
                 if (localStorage.getItem(PREF_HIDE_TOAST) !== 'true') {
                     toast.classList.add('show');
                 }
             }
-
-            window.hideToast = () => {
-                toast.classList.remove('show');
-            }
-
-            // Button: Disable Intro
+            window.hideToast = () => toast.classList.remove('show');
+            
             document.getElementById('btn-stop-anim').addEventListener('click', () => {
                 localStorage.setItem(PREF_SKIP_INTRO, 'true');
-                // We update the button text to confirm, then close
                 const btn = document.getElementById('btn-stop-anim');
                 btn.textContent = "Saved! Intro disabled.";
-                btn.style.background = "#22c55e"; // Green success
+                btn.style.background = "#22c55e";
                 setTimeout(hideToast, 1200);
             });
 
-            // Checkbox: Don't show toast
             document.getElementById('chk-no-toast').addEventListener('change', (e) => {
-                if(e.target.checked) {
-                    localStorage.setItem(PREF_HIDE_TOAST, 'true');
-                } else {
-                    localStorage.removeItem(PREF_HIDE_TOAST);
-                }
+                if(e.target.checked) localStorage.setItem(PREF_HIDE_TOAST, 'true');
+                else localStorage.removeItem(PREF_HIDE_TOAST);
             });
 
-
-            // --- 3. ANIMATION SETUP ---
-            
+            // --- 3. TEXT WRAPPING & PREP ---
             function wrapLetters(element) {
                 const processNode = (node) => {
+                    // Skip the counter span entirely so we don't break the number logic
+                    if (node.id === 'counter-span') return;
+
                     if (node.nodeType === 3) { 
                         let text = node.textContent.replace(/\s+/g, ' ');
                         if (node === element.firstChild) text = text.trimStart();
@@ -65,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         [...text].forEach(char => {
                             const span = document.createElement('span');
                             span.className = 'letter';
+                            // Apply keyword class to inner letters if parent has it
+                            if(element.classList.contains('keyword-gradient')) {
+                                span.classList.add('keyword-gradient');
+                            }
                             span.textContent = char === ' ' ? '\u00A0' : char;
                             frag.appendChild(span);
                         });
@@ -75,37 +68,64 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
                 processNode(element);
             }
+
+            // Wrap primary parts (excluding the counter ID)
             wrapLetters(document.querySelector('.primary-msg'));
             wrapLetters(document.querySelector('.secondary-msg'));
+            // Specifically wrap "dashboard" text which is in a separate span now
+            wrapLetters(document.getElementById('dashboard-text'));
 
             document.querySelector('.msg-container').style.opacity = 1;
 
-            // --- 4. TIMELINE ---
+            // --- 4. ANIMATION TIMELINE ---
             const tl = anime.timeline({ autoplay: true });
 
+            // Create a proxy object to hold the number value for animation
+            var counterObj = { val: 99 };
+
             tl
-            // A. Primary Text
+            // A. "Real time progress in"
             .add({
-                targets: '.primary-msg .letter:not(.keyword .letter)',
+                targets: '.primary-msg > .letter', // Direct children letters only (exclude keyword container logic)
                 translateY: ["1.1em", 0], translateZ: 0, opacity: [0, 1],
-                easing: "easeOutExpo", duration: 1200, delay: anime.stagger(30)
+                easing: "easeOutExpo", duration: 800, delay: anime.stagger(10)
             })
-            // B. Keyword 3D Effect
+            
+            // B. "1 dashboard" ENTRANCE + COUNTDOWN
+            // We start this 1000ms before previous ends
             .add({
-                targets: '.keyword .letter',
-                rotateX: [90, 0], opacity: [0, 1], translateY: [50, 0],
-                color: ['#ffffff', 'transparent'],
-                easing: "easeOutBack(1.4)", duration: 1400, delay: anime.stagger(45)
+                targets: ['#dashboard-text .letter', '#counter-span'],
+                translateY: ["100%", 0],
+                opacity: [0, 1],
+                easing: "easeOutExpo", // Matches text slide
+                duration: 1200,
+                delay: anime.stagger(10) // Stagger letters
             }, "-=1000")
-            // C. Secondary Text
+
+            // C. THE COUNTDOWN (Run in parallel with entrance)
+            // Starts same time as Step B (using timeline offset)
+            .add({
+                targets: counterObj,
+                val: [99, 1], // From 99 to 1
+                round: 1, // Integers only
+                easing: 'easeOutExpo', // Exponential Decay (Fast start, slow end)
+                duration: 2000, // 2 Seconds total
+                update: function() {
+                    counterSpan.innerHTML = counterObj.val;
+                }
+            }, "-=1200") // Sync with the entrance above
+
+            // D. Secondary Text
             .add({
                 targets: '.secondary-msg .letter',
                 translateY: ["20px", 0], opacity: [0, 1],
                 easing: "easeOutQuad", duration: 1000, delay: anime.stagger(10)
-            }, "-=800")
-            // D. Hold
-            .add({ duration: 1800 })
-            // E. Reveal Dashboard
+            }, "-=1500") // Overlap significantly
+            
+            // E. Hold
+            .add({ duration: 800 })
+            
+            // F. Reveal
             .add({
                 targets: '#intro-overlay', translateY: '-100%',
                 duration: 1000, easing: 'easeInOutQuart',
@@ -120,8 +140,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.body.style.overflow = 'auto';
                     landingPage.style.opacity = 1;
                     landingPage.style.transform = 'scale(1)';
-                    
-                    // >> TRIGGER TOAST NOW <<
                     showToast();
                 }
             });
@@ -137,8 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         document.body.style.overflow = 'auto';
                         landingPage.style.opacity = 1;
                         landingPage.style.transform = 'scale(1)';
-                        
-                        // >> TRIGGER TOAST NOW (Even if skipped) <<
                         showToast();
                     }
                 });
